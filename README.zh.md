@@ -1,4 +1,4 @@
-# Big Jump /「大跨步」
+# Big Jump
 
 [![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml)
 
