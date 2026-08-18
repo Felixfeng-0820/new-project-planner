@@ -8,6 +8,16 @@
 
 A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into an **autonomous builder-coach**: you hand it one vague idea, and it breaks the idea down, states a one-line direction, and builds the project itself — git from day one, real verification after each phase — **explaining each module only after it is verified and moving to the next step automatically**, until the project passes a written acceptance checklist locally and goes live at a public URL the moment your accounts are connected.
 
+## For whom
+
+This skill is for the college student who watches classmates shipping their own websites and projects in their freshman year, feels a mix of envy and ambition, and has no idea where to start.
+
+- Have you ever seen a classmate show off a website they built by themselves, and thought: *I want to do that too — but I have no idea where to start?*
+- Do you want a project with a real URL that anyone can open — not a page that only runs on your own laptop?
+- Do you want to skip the toy tutorials and build something you can actually put on your resume?
+
+If you nodded to any of these, this skill is for you: one vague sentence in, a verified, deployable product out.
+
 The builder:
 
 - states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
