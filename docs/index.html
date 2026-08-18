@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>new-project-planner — a vibe-coding coach for students and smart beginners</title>
+<title>new-project-planner — from "I want that too" to a live project</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -37,7 +37,7 @@
     letter-spacing: .02em;
   }
   h1 { font-size: 40px; margin: 16px 0 8px; }
-  .tagline { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
+  .tagline { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 auto; }
   .buttons { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-block;
@@ -54,6 +54,8 @@
   section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
   h2 { margin-top: 0; font-size: 22px; }
   h3 { font-size: 16px; margin-bottom: 6px; }
+  .hooks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .hooks li { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 16px; font-weight: 600; color: var(--accent); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
   .card b { display: block; margin-bottom: 4px; }
@@ -104,7 +106,7 @@
 <header>
   <span class="badge">Agent Skill · for Codex, Claude Code, Cursor, DeepSeek Harness</span>
   <h1>new-project-planner</h1>
-  <p class="tagline">An Agent Skill that turns your AI assistant into a vibe-coding coach for college students and smart beginners — from a vague idea to a deployed, portfolio-worthy project.</p>
+  <p class="tagline">You've seen classmates ship their own websites and thought: <em>I want that too — but where do I even start?</em> This skill turns your AI into the coach who gets you there. Every project ends with a real URL the whole world can open.</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/new-project-planner">View on GitHub</a>
     <a class="btn" href="#install">How to install</a>
@@ -112,15 +114,24 @@
 </header>
 
 <main>
+  <section id="hooks">
+    <h2>For students like you</h2>
+    <ul class="hooks">
+      <li>Have you ever seen a classmate show off a website they built by themselves, and thought: I want to do that too — but I have no idea where to start?</li>
+      <li>Do you want a project with a real URL that anyone can open — not a page that only runs on your own laptop?</li>
+      <li>Do you want to skip the toy tutorials and build something you can actually put on your resume?</li>
+    </ul>
+    <p>If you nodded to any of these, this skill is for you. It turns your AI assistant into a coach who asks these questions back at you — and then gets you from a vague idea to a live, deployed project.</p>
+  </section>
+
   <section id="what">
     <h2>What it does</h2>
-    <p>You say <em>"I want to build a course-schedule website"</em> and nothing else. Instead of dumping a wall of code, your AI becomes a coach who:</p>
     <div class="grid">
       <div class="card"><b>Clarifies first</b>Agrees on the goal and a minimal first version before writing any code.</div>
       <div class="card"><b>Places you on a learning path</b>HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper. Teaches the rung you are missing.</div>
-      <div class="card"><b>Builds real engineering in</b>git from day one, deployment early, an API or database when the feature needs it.</div>
-      <div class="card"><b>One step at a time</b>Exactly one small task per turn — bigger chunks when you keep up.</div>
-      <div class="card"><b>Teaches prompts</b>7 ready-to-copy prompt templates, from planning to code review.</div>
+      <div class="card"><b>Deploys for real</b>First deploy in phase 2, and the final result is always a public URL — never a local-only page.</div>
+      <div class="card"><b>Raises the bar</b>Make it work, then make it good, then make it impressive: clean UI, dark mode, real data, custom domain.</div>
+      <div class="card"><b>Teaches prompts</b>8 ready-to-copy prompt templates, from planning to deployment.</div>
       <div class="card"><b>Never loses your place</b>Every reply ends with a progress card, so a new chat can resume where you left off.</div>
     </div>
   </section>
@@ -142,10 +153,10 @@
     <h2>See it in action</h2>
     <div class="chat">
       <div class="msg user"><b>You</b>I want to build a course-schedule website for my campus.</div>
-      <div class="msg coach"><b>Coach</b>Good pick. Three quick questions:<br>1. What should v1 do?<br>2. Who else will use it?<br>3. What do you already know — any language, git, or the terminal?</div>
+      <div class="msg coach"><b>Coach</b>Great instinct. Quick check: have you seen classmates show off their own websites and thought, "I want that too — but where do I even start?" If yes, this project is how you catch up. Three questions:<br>1. What should v1 do?<br>2. Who else will use it?<br>3. What do you already know — any language, git, or the terminal?</div>
       <div class="msg user"><b>You</b>v1: show this week's classes, add or delete courses by hand. Just me for now. I've written a little HTML. No git.</div>
-      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: add courses, see the week grid, saved in the browser. Not in v1: accounts, sharing, importing from the school system.<br><br>You are around rung 2 of the learning path — JavaScript next, and we will add git and deployment along the way.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 week grid → 3 add/delete courses → 4 browser storage → 5 polish + test → 6 deploy to Vercel + custom domain.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
-      <div class="progress">Progress card<br>- Project: course-schedule website<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: build the week grid</div>
+      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: add courses, see the week grid, saved in the browser. Not in v1: accounts, sharing, importing from the school system.<br><br>You are around rung 2 of the learning path — JavaScript next. And note that deployment is required, not optional: you will have a real public URL from phase 2.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 first deploy (hello-world page at a public URL) → 3 week grid → 4 add/delete courses → 5 browser storage → 6 polish, test, custom domain, then share the link.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
+      <div class="progress">Progress card<br>- Project: course-schedule website<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: first deploy — hello-world page at a public URL</div>
     </div>
   </section>
 
@@ -163,6 +174,7 @@
       <li><code>/teach</code> explain a concept, with exercises</li>
       <li><code>/review</code> review your code, with reasons</li>
       <li><code>/stack</code> compare tech options and recommend</li>
+      <li><code>/deploy</code> put your project online, step by step</li>
       <li><code>/retrospective</code> summarize what you learned</li>
     </ul>
   </section>

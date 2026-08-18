@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>new-project-planner — 面向大学生和学得快的新手的 Vibe Coding 教练</title>
+<title>new-project-planner — 从"我也想做"到一个上线运行的项目</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -37,7 +37,7 @@
     letter-spacing: .02em;
   }
   h1 { font-size: 40px; margin: 16px 0 8px; }
-  .tagline { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
+  .tagline { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 auto; }
   .buttons { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-block;
@@ -54,6 +54,8 @@
   section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
   h2 { margin-top: 0; font-size: 22px; }
   h3 { font-size: 16px; margin-bottom: 6px; }
+  .hooks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .hooks li { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 16px; font-weight: 600; color: var(--accent); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
   .card b { display: block; margin-bottom: 4px; }
@@ -104,7 +106,7 @@
 <header>
   <span class="badge">Agent Skill · 适用于 Codex、Claude Code、Cursor、DeepSeek Harness</span>
   <h1>new-project-planner</h1>
-  <p class="tagline">一个 skill，把 AI 助手变成面向大学生和学得快的新手的 Vibe Coding 教练——从一个模糊想法，走到一个已上线、能写进简历的作品。</p>
+  <p class="tagline">你见过同学晒出自己做的网站，心想：<em>我也想做——但我到底从哪开始？</em>这个 skill 把 AI 变成带你走到终点的教练。每个项目的终点，都是一个全世界都能打开的真实网址。</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/new-project-planner">查看 GitHub 仓库</a>
     <a class="btn" href="#install">怎么安装</a>
@@ -112,15 +114,24 @@
 </header>
 
 <main>
+  <section id="hooks">
+    <h2>给这样的你</h2>
+    <ul class="hooks">
+      <li>你有没有见过同学晒出自己做的网站，心想：我也想做——但我根本不知道从哪开始？</li>
+      <li>你想要的是一个任何人能打开的公开网址，而不是一个只能在自己电脑上打开的本地网页吗？</li>
+      <li>你想跳过那些玩具教程，做一个真正能写进简历的东西吗？</li>
+    </ul>
+    <p>只要你对其中任何一句点了头，这个 skill 就是为你准备的。它把 AI 变成一位会把这些话问回给你的教练——然后带你从一个模糊想法，走到一个上线运行的项目。</p>
+  </section>
+
   <section id="what">
     <h2>它做什么</h2>
-    <p>你只说一句<em>"我想做一个课程表网站"</em>，别的什么都没说。AI 不会倒出一大堆代码，而是变成一位教练：</p>
     <div class="grid">
       <div class="card"><b>先弄清需求</b>在写任何代码之前，先定好目标和最小第一版。</div>
       <div class="card"><b>把你放进学习路径</b>HTML/CSS → JavaScript → git → 部署 → 数据与 API → 进阶。缺哪一级，就教哪一级。</div>
-      <div class="card"><b>把真实工程带进来</b>第一天就用 git、尽早部署、功能需要时就上 API 和数据库。</div>
-      <div class="card"><b>一次一小步</b>每轮只交一个具体小任务；跟得上就给你更大块。</div>
-      <div class="card"><b>顺手教提示词</b>7 个可直接复制的模板，从规划到代码审查都有。</div>
+      <div class="card"><b>真实部署</b>第 2 阶段就首次部署，最终成果永远是一个公网网址——绝不只是本地网页。</div>
+      <div class="card"><b>提高标准</b>先能跑、再好看、最后惊艳：干净界面、深色模式、真实数据、自定义域名。</div>
+      <div class="card"><b>顺手教提示词</b>8 个可直接复制的模板，从规划到部署都有。</div>
       <div class="card"><b>绝不丢进度</b>每条回复结尾附一张进度卡，换新对话也能接着做。</div>
     </div>
   </section>
@@ -142,10 +153,10 @@
     <h2>看一段示范</h2>
     <div class="chat">
       <div class="msg user"><b>你</b>我想做一个我们学校的课程表网站。</div>
-      <div class="msg coach"><b>教练</b>好选题。三个小问题：<br>1. 第一版应该做什么？<br>2. 还有谁会用它？<br>3. 你已经会什么——任何语言、git 或终端？</div>
+      <div class="msg coach"><b>教练</b>好直觉。先对个暗号：你有没有见过同学晒出自己做的网站，心想"我也想要——但我到底从哪开始"？如果有，这个项目就是你的追赶起点。三个问题：<br>1. 第一版应该做什么？<br>2. 还有谁会用它？<br>3. 你已经会什么——任何语言、git 或终端？</div>
       <div class="msg user"><b>你</b>第一版：显示本周课程，能手动添加和删除。先给我自己用。写过一点 HTML，没用过 git。</div>
-      <div class="msg coach"><b>教练</b>清楚了。第一版 = 一个页面：添加课程、看到周课表、保存在浏览器里。第一版不做：账号、分享、从教务系统导入。<br><br>按学习路径，你大概在第 2 级——接下来补 JavaScript，过程中我们会加上 git 和部署。<br><br>计划：第 0 阶段定范围 → 1 骨架 + git 仓库 → 2 周课表网格 → 3 添加/删除课程 → 4 浏览器存储 → 5 打磨 + 测试 → 6 部署到 Vercel + 自定义域名。<br><br><b>现在只做一件事：</b>建好项目文件夹并建一个 git 仓库。做完告诉我，我带你下一步。</div>
-      <div class="progress">进度卡<br>- 项目：课程表网站<br>- 阶段：第 1/6 阶段——骨架 + git 仓库<br>- 已完成：定好第一版范围<br>- 现在：建文件夹、建 git 仓库<br>- 下一步：做周课表网格</div>
+      <div class="msg coach"><b>教练</b>清楚了。第一版 = 一个页面：添加课程、看到周课表、保存在浏览器里。第一版不做：账号、分享、从教务系统导入。<br><br>按学习路径，你大概在第 2 级——接下来补 JavaScript。注意部署是必选项，不是可选项：从第 2 阶段起你就有一个真实公网网址。<br><br>计划：第 0 阶段定范围 → 1 骨架 + git 仓库 → 2 首次部署（hello-world 页面放到公网网址）→ 3 周课表网格 → 4 添加/删除课程 → 5 浏览器存储 → 6 打磨、测试、自定义域名，然后把链接分享出去。<br><br><b>现在只做一件事：</b>建好项目文件夹并建一个 git 仓库。做完告诉我，我带你下一步。</div>
+      <div class="progress">进度卡<br>- 项目：课程表网站<br>- 阶段：第 1/6 阶段——骨架 + git 仓库<br>- 已完成：定好第一版范围<br>- 现在：建文件夹、建 git 仓库<br>- 下一步：首次部署——hello-world 页面放到公网网址</div>
     </div>
   </section>
 
@@ -163,6 +174,7 @@
       <li><code>/teach</code> 讲透一个概念，附练习</li>
       <li><code>/review</code> 审查我的代码，给理由</li>
       <li><code>/stack</code> 对比技术选型并推荐</li>
+      <li><code>/deploy</code> 一步步教我把项目放到网上</li>
       <li><code>/retrospective</code> 复盘我学到了什么</li>
     </ul>
   </section>
