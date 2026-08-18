@@ -11,10 +11,12 @@ A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and sim
 The builder:
 
 - states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
-- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), git clean
-- verifies before it claims: a feature is done when its checks pass, not when a button reacts
-- deploys honestly: checks your auth first — deploys and verifies the public URL when possible, otherwise hands you exactly one login step. It never claims a URL it did not open and verify
-- teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified), then continues automatically
+- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), corrupt data warns instead of silently wiping, git clean with a secrets gate per commit
+- verifies before it claims: a feature is done when its checks pass, not when a button reacts; a small repeatable `tests/check.sh` runs in every phase
+- asks before acting: creating a repo, pushing, or deploying always waits for your explicit OK — being logged in is not permission
+- protects your work: never resets or overwrites your own uncommitted changes, never force-pushes; on failure it reverts only its own edits
+- deploys honestly: checks auth, gets your OK, then deploys and verifies the public URL — or hands you a short checklist (login + confirm + caveats). It never claims a URL it did not open and verify
+- teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified) and keeps chat output sparse — no progress cards, no filler, then continues automatically
 - stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
 - keeps you out of the classic traps: leaked secrets, unverified AI output, tutorial hell, half-finished projects
 - has a direction finder for "I don't know what to build": a problem-hunting method, a validation checklist, and product-shaped examples (`/ideas`)

@@ -120,10 +120,11 @@
     <h2>How it works</h2>
     <div class="grid">
       <div class="card"><b>Runs the workflow</b>You say one vague sentence. It states its assumptions in one line, gives a direction, and lists the phases — each with a written definition of done — then starts building. No interviews, no "continue?" after every step.</div>
-      <div class="card"><b>Verifies before it claims</b>Walks the main path, tries weird inputs, reloads to prove persistence, watches the console for errors and 404s. A feature is done when its checks pass — not when a button reacts.</div>
-      <div class="card"><b>Teaches after each module</b>A 4-line recap per phase: what was done, why this way, what you learned, and what was verified. Then it moves on automatically.</div>
+      <div class="card"><b>Verifies before it claims</b>Walks the main path, tries weird inputs, reloads to prove persistence, watches the console for errors and 404s — plus a small repeatable check script every phase. A feature is done when its checks pass — not when a button reacts.</div>
+      <div class="card"><b>Teaches after each module</b>A 4-line recap per phase: what was done, why this way, what you learned, and what was verified. Sparse output, no progress cards, then it moves on automatically.</div>
       <div class="card"><b>Stops only for real blockers</b>An error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment.</div>
-      <div class="card"><b>Deploys honestly</b>Checks your auth first: deploys and verifies the public URL when possible; otherwise hands you exactly one login step. Never claims a URL it did not open.</div>
+      <div class="card"><b>Deploys honestly</b>Asks your OK before creating a repo or deploying — auth is not permission. Then verifies the URL, or hands you a short checklist. Never claims a URL it did not open.</div>
+      <div class="card"><b>Protects your work</b>Never resets or overwrites your uncommitted changes, never force-pushes; reverts only its own edits.</div>
       <div class="card"><b>Finds your direction</b>No idea what to build? A problem-hunting method and a 3-question picker turn "I don't know" into a product-shaped tool.</div>
     </div>
   </section>
