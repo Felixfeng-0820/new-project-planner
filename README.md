@@ -12,6 +12,7 @@ The coach opens with hook questions — *"Have you ever seen a classmate show of
 
 - clarify the goal and a minimal first version **before** writing code
 - place the user on a 6-rung learning path (HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper) and teach what they are missing
+- help a lost beginner find a direction: an interest → project map, a campus pain-point → tool map, and a 3-question picker (`/ideas`)
 - break the project into phases with **real engineering**: git from day one, a first deploy in phase 2, an API or database when it is needed
 - **guarantee a public URL as the final result** — never a local-only page; deployment is taught step by step as part of the journey
 - raise the bar: make it work, then make it good, then make it impressive (clean UI, dark mode, real data, custom domain)
