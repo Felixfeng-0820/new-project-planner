@@ -12,7 +12,9 @@ The builder:
 
 - states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
 - defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), corrupt data warns and offers an export instead of silently wiping, git clean with an assignment-aware secrets gate per commit (no false alarms on prose words)
-- verifies before it claims: a feature is done when its checks pass, not when a button reacts; every phase runs `tests/check.sh` (static checks) plus real behavior tests (`node tests/logic.test.js`) that assert the core logic — and proves `.gitignore` actually works
+- verifies before it claims: a feature is done when its checks pass, not when a button reacts; every phase runs a three-tier suite — static checks, pure-logic tests (`node tests/logic.test.js`), and a **browser smoke test** that loads the real page and fails on any console error, wiring error, or broken UI flow; `.gitignore` effectiveness is proven, and the export's content is asserted, not just its write
+- treats gates as hard: the secrets gate is a self-tested script (`tests/secrets-check.sh`, assignment-aware, no false alarms on prose words); if any check errors or fails, the commit is aborted — a broken gate is worse than no gate
+- commits honestly: one commit per phase, verified against `git log` and the `PROJECT_NOTES.md` phase log — never assumed, never skipped
 - asks before acting: creating a repo, pushing, or deploying always waits for your explicit OK — being logged in is not permission
 - protects your work: records a worktree baseline before touching anything, never edits your pre-existing files, never resets or overwrites your uncommitted changes, never force-pushes; on failure it reverts only its own edits
 - deploys honestly: checks auth, gets your OK, then deploys and verifies the public URL — or hands you a short checklist (login + confirm + caveats). It never claims a URL it did not open and verify
