@@ -1,97 +1,91 @@
-# Big Jump
+# Big Jump 🚀
 
-[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml)
+> **One vague sentence in. A verified, deployable product out.**
 
-🌐 Website: **https://felixfeng-0820.github.io/big-jump/**
+[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://felixfeng-0820.github.io/big-jump/) · [中文版 README](README.zh.md)
 
-> [中文版 README](README.zh.md)
+**For the student who watches classmates ship their own websites in freshman year — and wonders where to even start.**
 
-A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into an **autonomous builder-coach**: you hand it one vague idea, and it breaks the idea down, states a one-line direction, and builds the project itself — git from day one, real verification after each phase — **explaining each module only after it is verified and moving to the next step automatically**, until the project passes a written acceptance checklist locally and goes live at a public URL the moment your accounts are connected.
+- Have you ever seen a classmate show off a website they built by themselves, and thought: *I want to do that too — but where do I even start?*
+- Do you want a real URL anyone can open — not a page that only runs on your laptop?
+- Are you done with toy tutorials, and ready for something you can actually put on your resume?
 
-## For whom
+If you nodded: stop watching tutorials. **Hand this skill to your AI, say one sentence, and watch it happen.**
 
-This skill is for the college student who watches classmates shipping their own websites and projects in their freshman year, feels a mix of envy and ambition, and has no idea where to start.
+## It takes 3 steps
 
-- Have you ever seen a classmate show off a website they built by themselves, and thought: *I want to do that too — but I have no idea where to start?*
-- Do you want a project with a real URL that anyone can open — not a page that only runs on your own laptop?
-- Do you want to skip the toy tutorials and build something you can actually put on your resume?
+1. 📦 **Install** — one command: `bash install.sh`
+2. 💬 **Say the thing** — *"I want to build a vocabulary drill website."*
+3. 🌍 **Get the URL** — it builds, tests, commits, and deploys (with your OK and your accounts connected), teaching you 4 lines per module along the way. You review; it executes.
 
-If you nodded to any of these, this skill is for you: one vague sentence in, a verified, deployable product out.
+## Before vs after
 
-The builder:
+| Without it | With Big Jump |
+|---|---|
+| 100 hours of tutorials, zero projects shipped | One sentence → 6 phases → live URL |
+| A wall of AI code you don't dare trust | Every phase passes a written acceptance checklist, including a real browser test |
+| API keys leaked into GitHub | A self-tested pre-commit secrets gate blocks them |
+| A new chat = a lost project | It resumes from `PROJECT_NOTES.md` automatically |
+| "The button reacts" = "it's done" | Persistence proven by reload; broken data warns and exports, never silently vanishes |
 
-- states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
-- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), corrupt data warns and offers an export instead of silently wiping, git clean with an assignment-aware secrets gate per commit (no false alarms on prose words)
-- verifies before it claims: a feature is done when its checks pass, not when a button reacts; a tiered suite runs every phase — `tests/check.sh --fast` (static checks, `.gitignore` effectiveness, secrets gate, baseline hashes, phase audit, logic tests) and `--full` (adds a portable browser smoke test with mandatory try/finally cleanup, or an honest jsdom fallback marked "visual checks skipped")
-- treats gates as hard: the secrets gate is a self-tested script enforced by a real git pre-commit hook; any failing step aborts the commit and prints a readable what/why/kind/next block — a broken gate is worse than no gate
-- commits honestly: one `phase N:` commit per phase, audited automatically against the `PROJECT_NOTES.md` phase list — an agent cannot fake six "passed" lines with one commit
-- asks before acting: creating a repo, pushing, or deploying always waits for your explicit OK — being logged in is not permission
-- protects your work: records a worktree baseline before touching anything, never edits your pre-existing files, never resets or overwrites your uncommitted changes, never force-pushes; on failure it reverts only its own edits
-- deploys honestly: checks auth, gets your OK, then deploys and verifies the public URL — or hands you a short checklist (login + confirm + caveats). It never claims a URL it did not open and verify
-- teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified) and keeps chat output sparse — no progress cards, no filler, then continues automatically
-- stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
-- adapts to its own capabilities: autonomous when it can run commands; in a plain chat it switches to guided mode — files as code blocks plus the exact commands to run — and never claims to have run what it could not
-- handles interruptions and resumes cleanly: mid-flow change requests are folded in or re-planned, never dropped; a new session reads `PROJECT_NOTES.md` and continues from where it left off
-- keeps you out of the classic traps: leaked secrets, unverified AI output, tutorial hell, half-finished projects
-- has a direction finder for "I don't know what to build": a problem-hunting method, a validation checklist, and product-shaped examples (`/ideas`)
+## Why you can trust it
 
-It also includes:
+- 🔨 **Not paper rules.** This skill went through 6 rounds of real-project testing; every bug those runs exposed — fake deploys, silent data loss, tests that couldn't fail, leaked processes — is fixed in the rules themselves.
+- ✅ **A real project already shipped with it**: a vocabulary drill site, 6 phases, tiered tests, browser smoke test — built by the skill, verified end-to-end.
+- 🛡️ **Hard constraints, not vibes**: nothing leaves your machine without your OK · your files are never touched · one commit per phase, audited automatically · a broken gate aborts the commit.
 
-- a 6-rung learning path used silently to pace explanations
-- 9 ready-to-copy prompt templates (plan, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy, options-first)
-- a worked example of the whole workflow
-- 10 product-shaped project ideas with minimal first versions and upgrade ideas
-- a plain-language glossary of 33 common terms
-- quick commands: `/pause`, `/next`, `/explain`, `/review`, `/error`, `/deploy`, `/showcase`, `/teach`, `/stack`, `/ideas`, `/retrospective`
+## What it actually does
+
+The builder states its assumptions in one line and starts immediately — no interviews, no "continue?" after every step. Then it:
+
+- defines a written definition of done per phase and a final acceptance checklist
+- verifies before it claims: `tests/check.sh --fast` every phase (static checks, `.gitignore` effectiveness, secrets gate, hashed baseline, phase audit, logic tests) and `--full` at acceptance (portable browser smoke test, or an honest jsdom fallback)
+- asks your OK before creating a repo, pushing, or deploying — being logged in is not permission
+- protects your work: worktree baseline with hashes, never `reset --hard` your changes, never force-push
+- deploys honestly: verifies the public URL itself, or hands you a short login checklist — never claims a URL it did not open
+- teaches after each verified module in ≤4 lines (what / why / learned / verified), sparse chat, no progress cards
+- has a direction finder (`/ideas`) for "I don't know what to build": a problem-hunting method plus product-shaped examples
+
+Also included: a 6-rung learning path, 9 prompt templates, 10 product-shaped project ideas, a 45-term plain-language glossary, and quick commands (`/pause`, `/next`, `/test`, `/explain`, `/review`, `/error`, `/deploy`, `/showcase`, `/teach`, `/stack`, `/ideas`, `/retrospective`).
 
 ## Install
 
-This skill uses the standard Agent Skills format (a folder containing a `SKILL.md` file), so it works with any tool that supports SKILL.md skills.
+This skill uses the standard Agent Skills format (a folder with a `SKILL.md`), so it works in any tool that supports SKILL.md skills.
 
-### Codex
-
-One command (macOS / Linux):
+### Codex — one command
 
 ```bash
 bash install.sh
 ```
 
-This downloads `SKILL.md` from the GitHub repo into `~/.codex/skills/big-jump/` and writes an `install-info.txt` beside it (source repo, commit, install date), so you can always tell what is installed and where it came from. Re-run the script anytime to update.
+Downloads `SKILL.md` into `~/.codex/skills/big-jump/` and writes an `install-info.txt` (source repo, commit, install date) beside it. Re-run anytime to update.
 
 ### DeepSeek Harness
 
-Put the `big-jump` folder into a `.dsh/skills` or `.agents/skills` directory inside your project, or into `~/.dsh/skills`:
-
-```
-~/.dsh/skills/big-jump/SKILL.md
-```
+Put the `big-jump` folder into `.dsh/skills` or `.agents/skills` in your project, or into `~/.dsh/skills`.
 
 ### Claude Code / Cursor
 
-Install the `big-jump` folder into the tool's own skills directory (for example `~/.claude/skills/` in Claude Code, or the `.agents/skills` project folder in Cursor).
+Install the folder into the tool's skills directory (e.g. `~/.claude/skills/`, or the `.agents/skills` project folder).
 
 ## Usage
 
-In a new chat, just say a vague idea, for example:
+In a new chat, say a vague idea:
 
 > I want to build an AI tool that turns PDFs into summaries I can ask questions about.
 
-The assistant, with this skill loaded, should state its assumptions in one line, give a one-sentence direction, break the project into phases, and start building immediately — recapping each module after it is done, without waiting for "continue".
-
-If the assistant does not pick the skill up automatically, mention it explicitly:
-
-> Use the big-jump skill.
+The assistant should state its assumptions in one line, list phases with definitions of done, and start building — recapping after each module without waiting for "continue". If it does not pick the skill up automatically, say: *"Use the big-jump skill."*
 
 ## Files
 
 - `SKILL.md` — the skill itself (English, what the AI actually loads)
 - `README.md` / `README.zh.md` — English / Chinese readme
-- `docs/index.html` / `docs/index.zh.html` — the showcase website (English / Chinese, hosted on GitHub Pages)
-- `install.sh` — one-command installer for Codex
+- `docs/index.html` / `docs/index.zh.html` — the showcase website (English / Chinese, GitHub Pages)
+- `install.sh` — one-command installer with provenance record
 - `.github/workflows/check-skill.yml` — automatic health check on every push
 - `notes/draft-zh-original.md` — the original Chinese draft (archived)
 - `notes/SKILL-zh.md` — full Chinese translation of `SKILL.md` (for reading)
-- `LICENSE` — MIT license
+- `LICENSE` — MIT
 
 ## License
 
