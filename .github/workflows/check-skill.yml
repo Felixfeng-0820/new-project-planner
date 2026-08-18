@@ -1,9 +1,5 @@
 name: check-skill
 
-# Every push (and every pull request) runs a quick health check on the skill.
-# If SKILL.md is missing or its header (frontmatter) is broken, the check
-# fails and GitHub shows a red mark on the commit.
-
 on:
   push:
     branches: [main]
@@ -15,13 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: SKILL.md exists and is not empty
-        run: test -s SKILL.md
+      - name: Validate skill structure, metadata, links, and evals
+        run: python3 scripts/validate_skill.py .
 
-      - name: Header has a valid name
-        run: |
-          grep -q '^name: [a-z0-9][a-z0-9-]*$' SKILL.md
+      - name: Check installer syntax
+        run: bash -n install.sh
 
-      - name: Header has a description
-        run: |
-          grep -q '^description: .\+' SKILL.md
+      - name: Test validator failure cases
+        run: python3 scripts/test_validator.py
+
+      - name: Test atomic installs, updates, rollback, and path safety
+        run: python3 scripts/test_installer.py

@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big Jump — 一句模糊想法进，一个上线产品出</title>
+<meta name="description" content="Big Jump 把有一定规模的软件想法变成经过验证、可以解释的 Web、API、CLI、数据、软件库、移动端或桌面端产品。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Big Jump — 一句模糊想法进，一个验证过的软件产品出</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -98,7 +100,7 @@
 <header>
   <span class="badge">Agent Skill · 适用于 Codex、Claude Code、Cursor、DeepSeek Harness</span>
   <h1>Big Jump</h1>
-  <p class="tagline">一句模糊想法进，一个<em>验证过的</em>产品出。把想法丢给 AI——它自己拆解、自己把整个项目建出来、拿一份书面验收清单检查自己的工作，并在你的账号连好的那一刻上线公网网址。诚实——绝不靠假装。</p>
+  <p class="tagline">一句模糊想法进，一个<em>验证过的</em>软件产品出。Big Jump 会按产品类型和风险选择路线，做出最小可用版本，再通过真实入口证明它——浏览器、API、CLI、数据管道、软件包、模拟器或桌面程序都可以。</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/big-jump">查看 GitHub 仓库</a>
     <a class="btn" href="#install">怎么安装</a>
@@ -107,23 +109,23 @@
 
 <main>
   <section id="hooks">
-    <h2>给这样的你</h2>
+    <h2>给想真正跨一步的你</h2>
     <ul class="hooks">
-      <li>你有没有见过同学晒出自己做的网站，心想：我也想做——但我根本不知道从哪开始？</li>
-      <li>你想要的是一个任何人能打开的公开网址，而不是一个只能在自己电脑上打开的本地网页吗？</li>
-      <li>你想跳过那些玩具教程，做一个真正能写进简历的东西吗？</li>
+      <li>有一个有用的想法，却不知道它应该做成网页、API、CLI、数据系统、软件库还是 App？</li>
+      <li>你要的不只是生成代码，还要真实边界测试、诚实的限制说明，以及在已有仓库里安全推进？</li>
+      <li>你想跨过玩具教程，但不想把每个项目都硬塞成一个公网网址？</li>
     </ul>
-    <p>只要你对其中任何一句点了头，这个 skill 就是为你准备的。它把 AI 变成自主执行的建设者：一句模糊想法进，一个已部署的产品出——每个模块做完还附一小段讲解。</p>
+    <p>Big Jump 把编程 Agent 变成自主执行的“建设者 + 教练”：选择实际路线、保护你的工作、按可测试切片实现，并且每个阶段只讲一个有用概念。</p>
   </section>
 
   <section id="what">
     <h2>它怎么工作</h2>
     <div class="grid">
-      <div class="card"><b>自动跑工作流</b>你说一句模糊想法，它用一行说明假设、给一句方向、列出阶段——每个阶段带一行书面完成标准——然后立刻开工。不采访，不在每步后问"继续吗？"。</div>
-      <div class="card"><b>先验证再声称</b>走主路径、试奇怪输入、重载证明持久化、盯控制台的报错和 404——每个阶段还跑一个小而可重复的检查脚本。检查通过才算完成——不是按钮有反应就算完成。</div>
+      <div class="card"><b>按产品选路线</b>可选择 Web、后端/API、CLI/自动化、数据/AI、库/SDK、移动/桌面或混合路线。已有项目优先沿用原技术栈和约定。</div>
+      <div class="card"><b>先验证再声称</b>每项结论都对应新鲜的静态、逻辑、集成、界面或发布证据。单元测试不能冒充没跑过的浏览器、软件包、模型或设备流程。</div>
       <div class="card"><b>做完才讲</b>每个阶段一段 4 行回顾：做了什么、为什么这样做、你学到了什么、验证了什么。输出稀疏、没有进度卡，讲完自动继续。</div>
-      <div class="card"><b>只在真卡点停</b>它修不动的报错、缺密钥或账号、只有你能拍板的选择、花钱。</div>
-      <div class="card"><b>诚实地部署</b>建仓库或部署之前先征得你同意——授权不等于许可。然后验证网址，或者交给你一份简短清单。绝不声称一个它没打开过的网址。</div>
+      <div class="card"><b>只在真实边界停</b>缺少授权、密钥或付费资源，涉及敏感生产数据、难以撤销的选择，或已经没有不同且安全的诊断路径。</div>
+      <div class="card"><b>诚实地交付</b>未经授权的外部动作先询问，再验证真正的交付入口。公网网址、软件包、模型产物或 App 构建只有实际检查过才会声称完成。</div>
       <div class="card"><b>保护你的工作</b>绝不 reset 或覆盖你未提交的改动，绝不 force-push；只回滚它自己的修改。</div>
       <div class="card"><b>适配你的环境</b>有终端就自己跑；纯聊天里就把文件和精确命令交给你——绝不声称跑过它跑不了的东西。</div>
       <div class="card"><b>帮你找到方向</b>不知道写啥？一套问题猎取法 + 三问指路器，把"我不知道"变成一个有人用的产品。</div>
@@ -133,9 +135,9 @@
   <section id="demo">
     <h2>看一段工作流示范</h2>
     <div class="chat">
-      <div class="msg user"><b>你</b>我想做一个 AI 工具：上传 PDF，得到摘要，还能对内容提问。</div>
-      <div class="msg coach"><b>Big Jump</b>假设：单页网页应用，一次一个 PDF，没有账号。方向：一个"AI 文档阅读器"——上传 → 摘要 → 提问。计划：6 个阶段。现在开工。<br><br>[第 1 阶段：建项目文件夹和 git 仓库，提交。]<br><br>第 1 阶段回顾：建好了文件夹和 git 仓库。为什么：git 保存每个版本，任何操作都不会永久弄坏项目。你学到：一次提交就是一个存档点。<br><br>[第 2 阶段：部署 hello-world 页面，报出网址。]<br><br>第 2 阶段回顾：你的第一个页面已在 [网址] 上线。为什么：尽早部署意味着从第一天就有真实网址。你学到：部署就是把文件放到服务器上，让别人能打开。<br><br>[第 3～6 阶段照此进行——建设、验证、提交、回顾、继续——全程不问。]</div>
-      <div class="msg phase"><b>收工</b>完成——AI 文档阅读器已在 [网址] 上线。它能上传 PDF、生成摘要、并回答关于内容的问题。升级方向：(1) 多文件库，(2) 用数据库记住历史文档，(3) 加账号让同学也能用。想做哪个？还是直接开始你的下一个项目？</div>
+      <div class="msg user"><b>你</b>做一个 macOS 和 Linux 都能用的 CLI，按 EXIF 日期重命名照片。默认只预演、处理重名，而且绝不能拿我的唯一原件测试。</div>
+      <div class="msg coach"><b>Big Jump</b>路线：新项目 · CLI/自动化 · 破坏性操作风险层。结果：先输出确定的重命名计划，只有明确确认后才真正执行。非目标：修改照片内容，或拿原件做测试。<br><br>[切片 1：读取复制出来的样例文件，输出稳定的预演计划。]<br><br>证据：缺日期与重名的单元测试，加上临时目录里的真实子进程运行。<br><br>[切片 2：增加确认执行、幂等性、中断恢复、打包和干净安装冒烟测试。]</div>
+      <div class="msg phase"><b>收工</b>只对实际运行过的平台作出结论：预演不会改文件；确认后能处理重名；第二次运行不再产生变化；干净安装后命令可用。没有测试的平台会明确写成限制，不会暗示已支持。</div>
     </div>
   </section>
 
@@ -143,15 +145,12 @@
     <h2>快捷指令</h2>
     <ul class="commands">
       <li><code>/pause</code> 停下自动流程，等我</li>
-      <li><code>/next</code> 继续下一步</li>
-      <li><code>/explain</code> 逐行解释我贴的代码</li>
-      <li><code>/review</code> 审查我的代码，给理由</li>
-      <li><code>/error</code> 一步步排查我的报错</li>
-      <li><code>/deploy</code> 带我一步步把项目放上网</li>
-      <li><code>/showcase</code> README、截图、演示链接、简历话术</li>
-      <li><code>/teach</code> 讲透一个概念，附练习</li>
-      <li><code>/stack</code> 对比技术选型并推荐</li>
-      <li><code>/ideas</code> 不知道写啥？跑一遍方向指路器</li>
+      <li><code>/test</code> 运行当前快速证据集</li>
+      <li><code>/test full</code> 运行完整验收证据集</li>
+      <li><code>/ideas</code> 寻找并选择产品方向</li>
+      <li><code>/explain</code> 用白话解释当前切片</li>
+      <li><code>/review</code> 检查范围、正确性、可维护性和证据</li>
+      <li><code>/deploy</code> 按交付选择与授权边界推进</li>
       <li><code>/retrospective</code> 复盘我学到了什么</li>
     </ul>
   </section>
@@ -161,13 +160,13 @@
     <h3>Codex —— 一条命令</h3>
     <p>下载仓库后运行：</p>
     <pre>bash install.sh</pre>
-    <p>或手动复制，让文件位于 <code>~/.codex/skills/big-jump/SKILL.md</code>。</p>
+    <p>或把完整的 <code>big-jump</code> 文件夹复制到 <code>~/.codex/skills/</code>。引用资料、模板、评测和校验脚本都是 skill 的一部分；只复制 <code>SKILL.md</code> 并不完整。</p>
     <h3>DeepSeek Harness</h3>
     <p>把 <code>big-jump</code> 文件夹放进项目里的 <code>.dsh/skills</code> 或 <code>.agents/skills</code> 目录，或者放进 <code>~/.dsh/skills</code>。</p>
     <h3>Claude Code / Cursor</h3>
     <p>把文件夹放进对应工具的 skills 目录（例如 <code>~/.claude/skills/</code>，或 Cursor 项目里的 <code>.agents/skills</code>）。</p>
     <h3>使用</h3>
-    <p>开新对话，说一句模糊想法，比如<em>"我想做一个把 PDF 变成可提问摘要的 AI 工具。"</em>如果 skill 没有自动加载，就说<em>"使用 big-jump 这个 skill。"</em></p>
+    <p>开新对话，说一个有一定规模的结果，比如<em>“做一个带预演和恢复能力的安全照片重命名 CLI。”</em>如果 skill 没有自动加载，就说<em>“使用 big-jump 这个 skill。”</em></p>
   </section>
 </main>
 

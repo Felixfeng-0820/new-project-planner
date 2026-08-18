@@ -1,89 +1,106 @@
 # Big Jump 🚀
 
-> **One vague sentence in. A verified, deployable product out.**
+> **One vague idea in. Verified software out.**
 
 [![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://felixfeng-0820.github.io/big-jump/) · [中文版 README](README.zh.md)
 
-- Have you ever seen a classmate show off a website they built by themselves, and thought: *I want to do that too — but where do I even start?*
-- Do you want a real URL anyone can open — not a page that only runs on your laptop?
-- Are you done with toy tutorials, and ready for something you can actually put on your resume?
+Big Jump turns a coding agent into an autonomous builder-coach. Give it a substantial product idea and it scopes the smallest useful release, chooses a practical route, builds in testable slices, verifies through the real entry point, protects your existing work, and teaches one concept per phase.
 
-If you nodded: stop watching tutorials. **Hand this skill to your AI, say one sentence, and watch it happen.**
+It is no longer a static-website recipe. It can route and combine:
 
-## It takes 3 steps
+- browser applications and full-stack products;
+- APIs, workers, databases, and backends;
+- CLI tools, batch jobs, and safe automation;
+- data pipelines, models, RAG, and LLM systems;
+- reusable libraries and SDKs;
+- mobile and desktop applications;
+- substantial changes inside an existing repository.
 
-1. 📦 **Install** — one command: `bash install.sh`
-2. 💬 **Say the thing** — *"I want to build a vocabulary drill website."*
-3. 🌍 **Get the URL** — it builds, tests, commits, and deploys (with your OK and your accounts connected), teaching you 4 lines per module along the way. You review; it executes.
+A successful release might be a public site, a tested API, an installable CLI, a reproducible model, a packaged library, or an app build. Big Jump does not force every idea into a public URL.
 
-## Before vs after
+## Three-step start
 
-| Without it | With Big Jump |
+1. **Install** — clone this repository and run `bash install.sh`.
+2. **Describe the outcome** — for example: “Build a CLI that safely renames my photos from EXIF dates. It needs dry-run and interruption recovery.”
+3. **Review the evidence** — Big Jump implements locally, runs stack-appropriate checks, records limitations, and asks before unapproved external actions.
+
+## What makes it different
+
+| Generic coding prompt | Big Jump |
 |---|---|
-| 100 hours of tutorials, zero projects shipped | One sentence → 6 phases → live URL |
-| A wall of AI code you don't dare trust | Every phase passes a written acceptance checklist, including a real browser test |
-| API keys leaked into GitHub | A self-tested pre-commit secrets gate blocks them |
-| A new chat = a lost project | It resumes from `PROJECT_NOTES.md` automatically |
-| "The button reacts" = "it's done" | Persistence proven by reload; broken data warns and exports, never silently vanishes |
+| Picks a familiar framework immediately | Inspects the repository and routes by the product's real entry point |
+| Uses the same test recipe everywhere | Chooses browser, API, subprocess, data, consumer-install, or simulator evidence as appropriate |
+| “Tests pass” with no scope | Maps each claim to a fresh command or interaction and names limitations |
+| Treats all existing files as safe to rewrite | Records dirty state and never stashes, commits, or discards user work without permission |
+| Deploys because credentials exist | Separates capability from consent and verifies the delivered version |
+| Stops after arbitrary retry counts | Continues while a materially different safe diagnostic path exists |
 
-## Why you can trust it
+## How the skill is organized
 
-- 🔨 **Not paper rules.** This skill went through 6 rounds of real-project testing; every bug those runs exposed — fake deploys, silent data loss, tests that couldn't fail, leaked processes — is fixed in the rules themselves.
-- ✅ **A real project already shipped with it**: a vocabulary drill site, 6 phases, tiered tests, browser smoke test — built by the skill, verified end-to-end.
-- 🛡️ **Hard constraints, not vibes**: nothing leaves your machine without your OK · your files are never touched · one commit per phase, audited automatically · a broken gate aborts the commit.
+The core `SKILL.md` is deliberately small. It contains routing, the build loop, safety boundaries, evidence rules, and the final acceptance review. It loads only the detail needed for the selected project:
 
-## What it actually does
+- `references/project-profiles.md` — web, backend, CLI, data/AI, library, mobile/desktop, existing-project, and risk overlays;
+- `references/verification-playbook.md` — fast/full evidence sets and real-boundary testing;
+- `references/guided-mode.md` — honest operation when commands cannot be run;
+- `references/release-and-deployment.md` — websites, APIs, packages, models, and app releases;
+- `references/ideation-and-coaching.md` — direction finding, teaching, and retrospectives;
+- `assets/PROJECT_NOTES.template.md` — optional durable outcome and evidence log;
+- `evals/evals.json` — realistic trigger and project-routing scenarios;
+- `scripts/validate_skill.py` — dependency-free structural validation;
+- `scripts/test_validator.py` / `scripts/test_installer.py` — negative validation and atomic-update regression tests.
 
-The builder states its assumptions in one line and starts immediately — no interviews, no "continue?" after every step. Then it:
+This progressive layout keeps irrelevant stack instructions out of the agent's context while preserving detailed guidance when it matters.
 
-- defines a written definition of done per phase and a final acceptance checklist
-- verifies before it claims: `tests/check.sh --fast` every phase (static checks, `.gitignore` effectiveness, secrets gate, hashed baseline, phase audit, logic tests) and `--full` at acceptance (portable browser smoke test, or an honest jsdom fallback)
-- asks your OK before creating a repo, pushing, or deploying — being logged in is not permission
-- protects your work: worktree baseline with hashes, never `reset --hard` your changes, never force-push
-- deploys honestly: verifies the public URL itself, or hands you a short login checklist — never claims a URL it did not open
-- teaches after each verified module in ≤4 lines (what / why / learned / verified), sparse chat, no progress cards
-- has a direction finder (`/ideas`) for "I don't know what to build": a problem-hunting method plus product-shaped examples
+## Safety and honesty
 
-Also included: a 6-rung learning path, 9 prompt templates, 10 product-shaped project ideas, a 45-term plain-language glossary, and quick commands (`/pause`, `/next`, `/test`, `/explain`, `/review`, `/error`, `/deploy`, `/showcase`, `/teach`, `/stack`, `/ideas`, `/retrospective`).
+- Uses repository-native tooling before adding new frameworks, hooks, or wrappers.
+- Never silently stages unrelated files, overwrites an existing hook, stashes user work, force-pushes, or uses destructive Git recovery.
+- Uses fixtures, temporary directories, disposable databases, provider test modes, and clean consumer environments.
+- Treats secret scanners as limited evidence, never invents or exposes credentials, and stops for account-owner rotation after suspected leakage.
+- Reports outcomes as verified, partially verified, or not verified.
+- Treats explicit authorization for a named repository modification, push, or deployment as permission for that scope, without asking twice.
 
 ## Install
 
-This skill uses the standard Agent Skills format (a folder with a `SKILL.md`), so it works in any tool that supports SKILL.md skills.
-
-### Codex — one command
+### Codex
 
 ```bash
 bash install.sh
 ```
 
-Downloads `SKILL.md` into `~/.codex/skills/big-jump/` and writes an `install-info.txt` (source repo, commit, install date) beside it. Re-run anytime to update.
+The installer copies the complete skill—not only `SKILL.md`—to `${CODEX_HOME}/skills/big-jump/` when `CODEX_HOME` is set, otherwise to `~/.codex/skills/big-jump/`. It stages and validates the whole update before replacing the prior version, rejects unsafe symlink layouts, and records a content fingerprint. Re-run it to update.
 
-### DeepSeek Harness
+### Other Agent Skills-compatible tools
 
-Put the `big-jump` folder into `.dsh/skills` or `.agents/skills` in your project, or into `~/.dsh/skills`.
+Copy the whole repository skill set—`SKILL.md`, `references/`, `assets/`, `agents/`, `evals/`, and `scripts/`—into the tool's skill directory. Do not copy only `SKILL.md`, because the core intentionally loads profile guidance on demand.
 
-### Claude Code / Cursor
+## Example requests
 
-Install the folder into the tool's skills directory (e.g. `~/.claude/skills/`, or the `.agents/skills` project folder).
+> Build a local-first meal-splitting web app. Balances must survive reloads, but I do not want deployment yet.
 
-## Usage
+> In this FastAPI repository, add a Postgres-backed import endpoint. Preserve my unrelated edits and do not touch production data.
 
-In a new chat, say a vague idea:
+> Turn these transaction CSVs into a fraud-risk baseline. Split by time, compare against a naive baseline, and do not overclaim accuracy.
 
-> I want to build an AI tool that turns PDFs into summaries I can ask questions about.
+> Create a Flutter habit tracker for Android and iOS. I have no Apple signing credentials, so report exactly what you can verify.
 
-The assistant should state its assumptions in one line, list phases with definitions of done, and start building — recapping after each module without waiting for "continue". If it does not pick the skill up automatically, say: *"Use the big-jump skill."*
+If the skill is not selected automatically, say: **“Use the big-jump skill.”**
 
-## Files
+## Design influences
 
-- `SKILL.md` — the skill itself (English, what the AI actually loads)
-- `README.md` / `README.zh.md` — English / Chinese readme
-- `docs/index.html` / `docs/index.zh.html` — the showcase website (English / Chinese, GitHub Pages)
-- `install.sh` — one-command installer with provenance record
-- `.github/workflows/check-skill.yml` — automatic health check on every push
-- `notes/draft-zh-original.md` — the original Chinese draft (archived)
-- `notes/SKILL-zh.md` — full Chinese translation of `SKILL.md` (for reading)
-- `LICENSE` — MIT
+Big Jump uses newly written instructions and templates while adapting general workflow ideas from [OpenAI's current skill guidance](https://learn.chatgpt.com/docs/build-skills), the [Agent Skills standard](https://github.com/agentskills/agentskills), [GitHub Spec Kit](https://github.com/github/spec-kit), [Anthropic's skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator), and [Superpowers](https://github.com/obra/superpowers). The synthesis emphasizes progressive disclosure, outcome-first planning, stack-native verification, realistic evals, and fresh evidence before completion claims.
+
+No third-party skill text or templates are bundled here.
+
+## Repository files
+
+- `SKILL.md` — English runtime instructions loaded by the agent;
+- `notes/SKILL-zh.md` — Chinese reading translation;
+- `README.md` / `README.zh.md` — English and Chinese project pages;
+- `docs/` — bilingual GitHub Pages showcase;
+- `install.sh` — atomic full-folder installer with rollback, path guards, provenance, and validation;
+- `.github/workflows/check-skill.yml` — CI validation and installer test;
+- `LICENSE` — MIT.
 
 ## License
 
