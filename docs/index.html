@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big Jump — from "I want that too" to a live project</title>
+<title>Big Jump — one vague idea in, a live product out</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -67,16 +67,8 @@
   .msg b { display: block; font-size: 12px; margin-bottom: 2px; opacity: .75; }
   .msg.user { align-self: flex-end; background: var(--user-bubble); }
   .msg.coach { align-self: flex-start; background: var(--coach-bubble); }
-  .progress {
-    align-self: flex-start;
-    background: #fff;
-    border: 1px dashed var(--accent);
-    border-radius: 10px;
-    padding: 10px 14px;
-    font-size: 14px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    white-space: pre-line;
-  }
+  .msg.phase { align-self: flex-start; background: #fff; border: 1px dashed var(--accent); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+  .msg.phase b { color: var(--accent); }
   .commands { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px; }
   .commands li { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
   .commands code { color: var(--accent); font-weight: 600; }
@@ -106,7 +98,7 @@
 <header>
   <span class="badge">Agent Skill · for Codex, Claude Code, Cursor, DeepSeek Harness</span>
   <h1>Big Jump</h1>
-  <p class="tagline">You've seen classmates ship their own websites and thought: <em>I want that too — but where do I even start?</em> This skill turns your AI into the coach who gets you there. Every project ends with a real URL the whole world can open.</p>
+  <p class="tagline">One vague idea in, a live product out. Hand your AI one sentence — it breaks the idea down, builds the whole project itself, deploys it, and explains each module <em>after</em> it is done. You don't push buttons; you review results.</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/big-jump">View on GitHub</a>
     <a class="btn" href="#install">How to install</a>
@@ -121,63 +113,44 @@
       <li>Do you want a project with a real URL that anyone can open — not a page that only runs on your own laptop?</li>
       <li>Do you want to skip the toy tutorials and build something you can actually put on your resume?</li>
     </ul>
-    <p>If you nodded to any of these, this skill is for you. It turns your AI assistant into a coach who asks these questions back at you — and then gets you from a vague idea to a live, deployed project.</p>
+    <p>If you nodded to any of these, this skill is for you. It turns your AI assistant into an autonomous builder: one vague sentence in, a deployed product out — and a short lesson after every module.</p>
   </section>
 
   <section id="what">
-    <h2>What it does</h2>
+    <h2>How it works</h2>
     <div class="grid">
-      <div class="card"><b>Clarifies first</b>Agrees on the goal and a minimal first version before writing any code.</div>
-      <div class="card"><b>Places you on a learning path</b>HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper. Teaches the rung you are missing.</div>
-      <div class="card"><b>Deploys for real</b>First deploy in phase 2, and the final result is always a public URL — never a local-only page.</div>
-      <div class="card"><b>Raises the bar</b>Make it work, then make it good, then make it impressive: clean UI, dark mode, real data, custom domain.</div>
-      <div class="card"><b>Teaches prompts</b>9 ready-to-copy prompt templates, from planning to deployment.</div>
-      <div class="card"><b>Finds your direction</b>No idea what to build? A problem-hunting method and a 3-question picker turn "I don't know" into a product-shaped tool with real users.</div>
-      <div class="card"><b>Never loses your place</b>Every reply ends with a progress card, so a new chat can resume where you left off.</div>
+      <div class="card"><b>Runs the workflow</b>You say one vague sentence. It states its assumptions in one line, gives a direction, lists the phases — and starts building immediately. No interviews, no "continue?" after every step.</div>
+      <div class="card"><b>Builds autonomously</b>Files, commands, tests, commits, deploys — the AI does the work with its own tools. You are the reviewer, not the executor.</div>
+      <div class="card"><b>Teaches after each module</b>A 3–4 line recap per phase: what was done, why this way, what you learned. Then it moves on automatically.</div>
+      <div class="card"><b>Stops only for real blockers</b>An error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment.</div>
+      <div class="card"><b>Deploys for real</b>The project is done when it is live at a public URL anyone can open — never a local-only page.</div>
+      <div class="card"><b>Finds your direction</b>No idea what to build? A problem-hunting method and a 3-question picker turn "I don't know" into a product-shaped tool.</div>
     </div>
   </section>
 
-  <section id="path">
-    <h2>The learning path</h2>
-    <p>Each rung is a skill plus a project that proves it:</p>
-    <ul class="rungs">
-      <li><b>1 · HTML/CSS</b> a personal page → a link people can open</li>
-      <li><b>2 · JavaScript</b> a habit tracker or budget calculator → works in the browser</li>
-      <li><b>3 · git/GitHub</b> every project in a repo → clean history</li>
-      <li><b>4 · Deployment</b> Vercel / Netlify / GitHub Pages → a resume-ready URL</li>
-      <li><b>5 · Data & APIs</b> JSON, SQLite → real data that survives refresh</li>
-      <li><b>6 · Going deeper</b> React, FastAPI, or an LLM API → a full-stack portfolio piece</li>
-    </ul>
-  </section>
-
   <section id="demo">
-    <h2>See it in action</h2>
+    <h2>See the workflow in action</h2>
     <div class="chat">
-      <div class="msg user"><b>You</b>I want to build an AI tool that turns PDFs I upload into summaries I can ask questions about.</div>
-      <div class="msg coach"><b>Coach</b>Ambitious and doable — a real product: thousands of students pay for tools like this, and you can build v1 with one page and one API. Quick check: have you seen classmates show off their own websites and thought, "I want that too — but where do I even start?" If yes, this project is how you catch up. Three questions:<br>1. What should v1 do?<br>2. Who would use it besides you?<br>3. What do you already know — any language, git, or the terminal?</div>
-      <div class="msg user"><b>You</b>v1: upload a PDF, get a summary, and ask questions about it. My classmates would use it. I've written a little HTML. No git.</div>
-      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: upload a PDF, see a summary, ask questions. Not in v1: accounts, multi-file libraries, subscriptions.<br><br>You are around rung 2 of the learning path, and this project pulls in rung 5–6 ideas — calling an AI API — one step at a time. And note that deployment is required, not optional: you will have a real public URL from phase 2.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 first deploy (hello-world page at a public URL) → 3 upload page → 4 AI summary (LLM API) → 5 ask questions about the document → 6 polish, test, custom domain, then share it with your class.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
-      <div class="progress">Progress card<br>- Project: AI document reader<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: first deploy — hello-world page at a public URL</div>
+      <div class="msg user"><b>You</b>I want to build an AI tool that turns PDFs into summaries I can ask questions about.</div>
+      <div class="msg coach"><b>Big Jump</b>Assumption: single-page web app, one PDF at a time, no accounts. Direction: an "AI document reader" — upload → summary → ask questions. Plan: 6 phases. Starting now.<br><br>[Phase 1: creates the project and a git repo, commits.]<br><br>Phase 1 recap: we made the folder and a git repo. Why: git saves every version, so nothing can permanently break the project. You learned: a commit is a save point.<br><br>[Phase 2: deploys a hello-world page and reports the URL.]<br><br>Phase 2 recap: your first page is live at [URL]. Why: deploying early means a real URL exists from day one. You learned: deploying is putting files on a server so others can open them.<br><br>[Phases 3–6 run the same way — build, verify, commit, recap, continue — without asking.]</div>
+      <div class="msg phase"><b>End</b>Done — the AI document reader is live at [URL]. It uploads a PDF, summarizes it, and answers questions about it. Upgrade ideas: (1) multi-file library, (2) a database for past documents, (3) accounts for your classmates. Want any of these, or should we start your next project?</div>
     </div>
   </section>
 
   <section id="commands">
     <h2>Quick commands</h2>
     <ul class="commands">
-      <li><code>/start</code> define the first-version scope</li>
-      <li><code>/breakdown</code> phases, tasks, acceptance criteria</li>
-      <li><code>/next</code> the single most useful thing to do now</li>
-      <li><code>/teach-prompt</code> how to write your next AI prompt</li>
-      <li><code>/check</code> review progress and gaps</li>
-      <li><code>/error</code> troubleshoot an error like a teacher</li>
+      <li><code>/pause</code> stop the auto-flow and wait for me</li>
+      <li><code>/next</code> continue to the next step</li>
       <li><code>/explain</code> explain pasted code line by line</li>
-      <li><code>/ideas</code> no idea what to build? run the direction picker</li>
-      <li><code>/teach</code> explain a concept, with exercises</li>
-      <li><code>/review</code> review your code, with reasons</li>
-      <li><code>/stack</code> compare tech options and recommend</li>
-      <li><code>/deploy</code> put your project online, step by step</li>
+      <li><code>/review</code> review my code, with reasons</li>
+      <li><code>/error</code> troubleshoot my error step by step</li>
+      <li><code>/deploy</code> walk me through putting it online</li>
       <li><code>/showcase</code> README, screenshot, demo link, resume bullet</li>
-      <li><code>/retrospective</code> summarize what you learned</li>
+      <li><code>/teach</code> explain a concept, with exercises</li>
+      <li><code>/stack</code> compare tech options and recommend</li>
+      <li><code>/ideas</code> no idea what to build? run the direction finder</li>
+      <li><code>/retrospective</code> summarize what I learned</li>
     </ul>
   </section>
 

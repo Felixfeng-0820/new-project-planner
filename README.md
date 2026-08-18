@@ -6,32 +6,26 @@
 
 > [中文版 README](README.zh.md)
 
-A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into a vibe-coding coach for **the college student who watches classmates shipping their own websites in freshman year, feels a mix of envy and ambition, and has no idea where to start.**
+A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into an **autonomous builder-coach**: you hand it one vague idea, and it breaks the idea down, states a one-line direction, and builds the project end-to-end itself — git from day one, an early deploy, APIs and databases when needed — **explaining each module only after it is done and moving to the next step automatically**, until the project is live at a public URL.
 
-The coach opens with hook questions — *"Have you ever seen a classmate show off their own website and thought: I want to do that too — but where do I even start?"* — matches the user's level, and then:
+The builder:
 
-- clarify the goal and a minimal first version **before** writing code
-- place the user on a 6-rung learning path (HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper) and teach what they are missing
-- help a lost beginner find a direction: a problem-hunting method, a validation checklist, and a 3-question picker that aims at product-shaped tools with real users, not one-off scripts (`/ideas`)
-- break the project into phases with **real engineering**: git from day one, a first deploy in phase 2, an API or database when it is needed
-- **guarantee a public URL as the final result** — never a local-only page; deployment is taught step by step as part of the journey
-- raise the bar: make it work, then make it good, then make it impressive (clean UI, dark mode, real data, custom domain)
-- guide one small step at a time, faster when the user keeps up
-- teach prompt-writing along the way, with 9 ready-to-copy prompt templates
-- say no honestly when an idea is too big for a first version
-- keep the user out of the classic traps: tutorial hell, pasting code they cannot explain, API keys leaked into git, and AI output taken on faith
-- verify everything: treat AI output as a draft — run it, ask for reasons, check the official docs
-- close the loop after deploy: feedback from friends, a README with a screenshot, and a one-line resume bullet (`/showcase`)
-- keep a "progress card" at the end of every reply, so the user can resume after a break or in a new chat
-- explain every change and every error in clear, non-condescending language
+- states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
+- builds with its own tools: files, commands, tests, commits, deploys. You are the reviewer, not the executor
+- teaches after each module in 3–4 lines (what was done / why this way / what you learned), then continues automatically
+- stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
+- guarantees the final result is a public URL anyone can open — never a local-only page
+- keeps you out of the classic traps: leaked secrets, unverified AI output, tutorial hell, half-finished projects
+- has a direction finder for "I don't know what to build": a problem-hunting method, a validation checklist, and product-shaped examples (`/ideas`)
 
 It also includes:
 
-- 9 ready-to-copy prompt templates (plan a project, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy a project, give me options first)
-- a worked example of a good coaching conversation
-- 10 product-shaped project ideas (portfolio page, AI document reader, creator formatting tool, price watcher, open-data product, …) with minimal first versions and upgrade ideas
+- a 6-rung learning path used silently to pace explanations
+- 9 ready-to-copy prompt templates (plan, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy, options-first)
+- a worked example of the whole workflow
+- 10 product-shaped project ideas with minimal first versions and upgrade ideas
 - a plain-language glossary of 33 common terms
-- quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/explain`, `/ideas`, `/teach`, `/review`, `/stack`, `/deploy`, `/showcase`, `/retrospective`
+- quick commands: `/pause`, `/next`, `/explain`, `/review`, `/error`, `/deploy`, `/showcase`, `/teach`, `/stack`, `/ideas`, `/retrospective`
 
 ## Install
 
@@ -61,11 +55,11 @@ Install the `big-jump` folder into the tool's own skills directory (for example 
 
 ## Usage
 
-In a new chat, just describe a vague idea, for example:
+In a new chat, just say a vague idea, for example:
 
 > I want to build an AI tool that turns PDFs into summaries I can ask questions about.
 
-The assistant, with this skill loaded, should reply as a coach: clarify the idea, place you on the learning path, agree on a minimal first version, and hand you one small step.
+The assistant, with this skill loaded, should state its assumptions in one line, give a one-sentence direction, break the project into phases, and start building immediately — recapping each module after it is done, without waiting for "continue".
 
 If the assistant does not pick the skill up automatically, mention it explicitly:
 

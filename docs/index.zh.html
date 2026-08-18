@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big Jump — 从"我也想做"到一个上线运行的项目</title>
+<title>Big Jump — 一句模糊想法进，一个上线产品出</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -67,16 +67,8 @@
   .msg b { display: block; font-size: 12px; margin-bottom: 2px; opacity: .75; }
   .msg.user { align-self: flex-end; background: var(--user-bubble); }
   .msg.coach { align-self: flex-start; background: var(--coach-bubble); }
-  .progress {
-    align-self: flex-start;
-    background: #fff;
-    border: 1px dashed var(--accent);
-    border-radius: 10px;
-    padding: 10px 14px;
-    font-size: 14px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    white-space: pre-line;
-  }
+  .msg.phase { align-self: flex-start; background: #fff; border: 1px dashed var(--accent); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+  .msg.phase b { color: var(--accent); }
   .commands { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px; }
   .commands li { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
   .commands code { color: var(--accent); font-weight: 600; }
@@ -106,7 +98,7 @@
 <header>
   <span class="badge">Agent Skill · 适用于 Codex、Claude Code、Cursor、DeepSeek Harness</span>
   <h1>Big Jump</h1>
-  <p class="tagline">你见过同学晒出自己做的网站，心想：<em>我也想做——但我到底从哪开始？</em>这个 skill 把 AI 变成带你走到终点的教练。每个项目的终点，都是一个全世界都能打开的真实网址。</p>
+  <p class="tagline">一句模糊想法进，一个上线产品出。把想法丢给 AI——它自己拆解、自己把整个项目建出来、自己部署上线，每个模块<em>做完之后</em>再给你讲。你不用一步步按按钮，你只负责验收。</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/big-jump">查看 GitHub 仓库</a>
     <a class="btn" href="#install">怎么安装</a>
@@ -121,62 +113,43 @@
       <li>你想要的是一个任何人能打开的公开网址，而不是一个只能在自己电脑上打开的本地网页吗？</li>
       <li>你想跳过那些玩具教程，做一个真正能写进简历的东西吗？</li>
     </ul>
-    <p>只要你对其中任何一句点了头，这个 skill 就是为你准备的。它把 AI 变成一位会把这些话问回给你的教练——然后带你从一个模糊想法，走到一个上线运行的项目。</p>
+    <p>只要你对其中任何一句点了头，这个 skill 就是为你准备的。它把 AI 变成自主执行的建设者：一句模糊想法进，一个已部署的产品出——每个模块做完还附一小段讲解。</p>
   </section>
 
   <section id="what">
-    <h2>它做什么</h2>
+    <h2>它怎么工作</h2>
     <div class="grid">
-      <div class="card"><b>先弄清需求</b>在写任何代码之前，先定好目标和最小第一版。</div>
-      <div class="card"><b>把你放进学习路径</b>HTML/CSS → JavaScript → git → 部署 → 数据与 API → 进阶。缺哪一级，就教哪一级。</div>
-      <div class="card"><b>真实部署</b>第 2 阶段就首次部署，最终成果永远是一个公网网址——绝不只是本地网页。</div>
-      <div class="card"><b>提高标准</b>先能跑、再好看、最后惊艳：干净界面、深色模式、真实数据、自定义域名。</div>
-      <div class="card"><b>顺手教提示词</b>9 个可直接复制的模板，从规划到部署都有。</div>
-      <div class="card"><b>帮你找到方向</b>不知道写啥？一套问题猎取法 + 三问指路器，把"我不知道"变成一个有人用的产品，而不是一次性脚本。</div>
-      <div class="card"><b>绝不丢进度</b>每条回复结尾附一张进度卡，换新对话也能接着做。</div>
+      <div class="card"><b>自动跑工作流</b>你说一句模糊想法，它用一行说明假设、给一句方向、列出阶段——然后立刻开工。不采访，不在每步后问"继续吗？"。</div>
+      <div class="card"><b>自主建设</b>文件、命令、测试、提交、部署——AI 用自己的工具干活。你是审阅者，不是执行者。</div>
+      <div class="card"><b>做完才讲</b>每个阶段一段 3～4 行回顾：做了什么、为什么这样做、你学到了什么。讲完自动继续。</div>
+      <div class="card"><b>只在真卡点停</b>它修不动的报错、缺密钥或账号、只有你能拍板的选择、花钱。</div>
+      <div class="card"><b>真实部署</b>项目在一个任何人能打开的公网网址上线，才算完成——绝不只是本地网页。</div>
+      <div class="card"><b>帮你找到方向</b>不知道写啥？一套问题猎取法 + 三问指路器，把"我不知道"变成一个有人用的产品。</div>
     </div>
   </section>
 
-  <section id="path">
-    <h2>学习路径</h2>
-    <p>每一级 = 一项技能 + 一个能证明它的项目：</p>
-    <ul class="rungs">
-      <li><b>1 · HTML/CSS</b> 个人主页 → 一个别人能打开的链接</li>
-      <li><b>2 · JavaScript</b> 习惯打卡 / 预算计算器 → 浏览器里能跑</li>
-      <li><b>3 · git/GitHub</b> 每个项目都在仓库里 → 干净的历史</li>
-      <li><b>4 · 部署</b> Vercel / Netlify / GitHub Pages → 能写进简历的网址</li>
-      <li><b>5 · 数据与 API</b> JSON、SQLite → 刷新不丢的真实数据</li>
-      <li><b>6 · 进阶</b> React、FastAPI 或大模型 API → 一个全栈简历作品</li>
-    </ul>
-  </section>
-
   <section id="demo">
-    <h2>看一段示范</h2>
+    <h2>看一段工作流示范</h2>
     <div class="chat">
       <div class="msg user"><b>你</b>我想做一个 AI 工具：上传 PDF，得到摘要，还能对内容提问。</div>
-      <div class="msg coach"><b>教练</b>有野心，也可行——这是一个真正的产品：有成千上万的学生为这类工具付费，而你用"一个页面 + 一个 API"就能做出第一版。先对个暗号：你有没有见过同学晒出自己做的网站，心想"我也想要——但我到底从哪开始"？如果有，这个项目就是你的追赶起点。三个问题：<br>1. 第一版应该做什么？<br>2. 除了你，谁会用？<br>3. 你已经会什么——任何语言、git 或终端？</div>
-      <div class="msg user"><b>你</b>第一版：上传 PDF、看摘要、对内容提问。我同学会用。写过一点 HTML，没用过 git。</div>
-      <div class="msg coach"><b>教练</b>清楚了。第一版 = 一个页面：上传 PDF、看摘要、提问。第一版不做：账号、多文件库、订阅。<br><br>按学习路径，你大概在第 2 级，而这个项目会一步步把你带到第 5～6 级的内容——调用 AI API。注意部署是必选项，不是可选项：从第 2 阶段起你就有一个真实公网网址。<br><br>计划：第 0 阶段定范围 → 1 骨架 + git 仓库 → 2 首次部署（hello-world 页面放到公网网址）→ 3 上传页 → 4 AI 摘要（LLM API）→ 5 对文档提问 → 6 打磨、测试、自定义域名，然后分享给全班同学。<br><br><b>现在只做一件事：</b>建好项目文件夹并建一个 git 仓库。做完告诉我，我带你下一步。</div>
-      <div class="progress">进度卡<br>- 项目：AI 文档阅读器<br>- 阶段：第 1/6 阶段——骨架 + git 仓库<br>- 已完成：定好第一版范围<br>- 现在：建文件夹、建 git 仓库<br>- 下一步：首次部署——hello-world 页面放到公网网址</div>
+      <div class="msg coach"><b>Big Jump</b>假设：单页网页应用，一次一个 PDF，没有账号。方向：一个"AI 文档阅读器"——上传 → 摘要 → 提问。计划：6 个阶段。现在开工。<br><br>[第 1 阶段：建项目文件夹和 git 仓库，提交。]<br><br>第 1 阶段回顾：建好了文件夹和 git 仓库。为什么：git 保存每个版本，任何操作都不会永久弄坏项目。你学到：一次提交就是一个存档点。<br><br>[第 2 阶段：部署 hello-world 页面，报出网址。]<br><br>第 2 阶段回顾：你的第一个页面已在 [网址] 上线。为什么：尽早部署意味着从第一天就有真实网址。你学到：部署就是把文件放到服务器上，让别人能打开。<br><br>[第 3～6 阶段照此进行——建设、验证、提交、回顾、继续——全程不问。]</div>
+      <div class="msg phase"><b>收工</b>完成——AI 文档阅读器已在 [网址] 上线。它能上传 PDF、生成摘要、并回答关于内容的问题。升级方向：(1) 多文件库，(2) 用数据库记住历史文档，(3) 加账号让同学也能用。想做哪个？还是直接开始你的下一个项目？</div>
     </div>
   </section>
 
   <section id="commands">
     <h2>快捷指令</h2>
     <ul class="commands">
-      <li><code>/start</code> 从想法出发，定第一版范围</li>
-      <li><code>/breakdown</code> 拆成阶段、任务和验收标准</li>
-      <li><code>/next</code> 只告诉我现在最该做的一件事</li>
-      <li><code>/teach-prompt</code> 教我怎么写下一条提示词</li>
-      <li><code>/check</code> 检查项目进度和遗漏</li>
-      <li><code>/error</code> 进入报错排查模式</li>
+      <li><code>/pause</code> 停下自动流程，等我</li>
+      <li><code>/next</code> 继续下一步</li>
       <li><code>/explain</code> 逐行解释我贴的代码</li>
-      <li><code>/ideas</code> 不知道写啥？跑一遍方向指路器</li>
-      <li><code>/teach</code> 讲透一个概念，附练习</li>
       <li><code>/review</code> 审查我的代码，给理由</li>
-      <li><code>/stack</code> 对比技术选型并推荐</li>
-      <li><code>/deploy</code> 一步步教我把项目放到网上</li>
+      <li><code>/error</code> 一步步排查我的报错</li>
+      <li><code>/deploy</code> 带我一步步把项目放上网</li>
       <li><code>/showcase</code> README、截图、演示链接、简历话术</li>
+      <li><code>/teach</code> 讲透一个概念，附练习</li>
+      <li><code>/stack</code> 对比技术选型并推荐</li>
+      <li><code>/ideas</code> 不知道写啥？跑一遍方向指路器</li>
       <li><code>/retrospective</code> 复盘我学到了什么</li>
     </ul>
   </section>
