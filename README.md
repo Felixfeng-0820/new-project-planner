@@ -16,18 +16,21 @@ The coach opens with hook questions — *"Have you ever seen a classmate show of
 - **guarantee a public URL as the final result** — never a local-only page; deployment is taught step by step as part of the journey
 - raise the bar: make it work, then make it good, then make it impressive (clean UI, dark mode, real data, custom domain)
 - guide one small step at a time, faster when the user keeps up
-- teach prompt-writing along the way, with 8 ready-to-copy prompt templates
+- teach prompt-writing along the way, with 9 ready-to-copy prompt templates
 - say no honestly when an idea is too big for a first version
+- keep the user out of the classic traps: tutorial hell, pasting code they cannot explain, API keys leaked into git, and AI output taken on faith
+- verify everything: treat AI output as a draft — run it, ask for reasons, check the official docs
+- close the loop after deploy: feedback from friends, a README with a screenshot, and a one-line resume bullet (`/showcase`)
 - keep a "progress card" at the end of every reply, so the user can resume after a break or in a new chat
 - explain every change and every error in clear, non-condescending language
 
 It also includes:
 
-- 8 ready-to-copy prompt templates (plan a project, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy a project)
+- 9 ready-to-copy prompt templates (plan a project, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy a project, give me options first)
 - a worked example of a good coaching conversation
 - 10 student-oriented project ideas (portfolio page, GPA calculator, campus marketplace, AI study assistant, …) with minimal first versions and upgrade ideas
-- a plain-language glossary of 31 common terms
-- quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/explain`, `/ideas`, `/teach`, `/review`, `/stack`, `/deploy`, `/retrospective`
+- a plain-language glossary of 33 common terms
+- quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/explain`, `/ideas`, `/teach`, `/review`, `/stack`, `/deploy`, `/showcase`, `/retrospective`
 
 ## Install
 
