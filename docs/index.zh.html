@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>new-project-planner — AI 新手的 Vibe Coding 教练</title>
+<title>new-project-planner — 面向大学生和学得快的新手的 Vibe Coding 教练</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -37,7 +37,7 @@
     letter-spacing: .02em;
   }
   h1 { font-size: 40px; margin: 16px 0 8px; }
-  .tagline { color: var(--muted); font-size: 18px; max-width: 560px; margin: 0 auto; }
+  .tagline { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
   .buttons { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-block;
@@ -57,6 +57,9 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
   .card b { display: block; margin-bottom: 4px; }
+  .rungs { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+  .rungs li { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+  .rungs b { color: var(--accent); }
   .chat { display: flex; flex-direction: column; gap: 10px; }
   .msg { max-width: 82%; padding: 10px 14px; border-radius: 12px; font-size: 15px; }
   .msg b { display: block; font-size: 12px; margin-bottom: 2px; opacity: .75; }
@@ -101,7 +104,7 @@
 <header>
   <span class="badge">Agent Skill · 适用于 Codex、Claude Code、Cursor、DeepSeek Harness</span>
   <h1>new-project-planner</h1>
-  <p class="tagline">一个 skill，把 AI 助手变成耐心陪完全新手做项目的 Vibe Coding 教练。</p>
+  <p class="tagline">一个 skill，把 AI 助手变成面向大学生和学得快的新手的 Vibe Coding 教练——从一个模糊想法，走到一个已上线、能写进简历的作品。</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/new-project-planner">查看 GitHub 仓库</a>
     <a class="btn" href="#install">怎么安装</a>
@@ -111,25 +114,38 @@
 <main>
   <section id="what">
     <h2>它做什么</h2>
-    <p>你只说一句<em>"我想做一个网站"</em>，别的什么都没说。AI 不会倒出一大堆代码，而是变成一位教练：</p>
+    <p>你只说一句<em>"我想做一个课程表网站"</em>，别的什么都没说。AI 不会倒出一大堆代码，而是变成一位教练：</p>
     <div class="grid">
       <div class="card"><b>先弄清需求</b>在写任何代码之前，先定好目标和最小第一版。</div>
-      <div class="card"><b>再拆解项目</b>把项目拆成清晰的阶段，每阶段都有"怎么算完成"的标准。</div>
-      <div class="card"><b>一次一小步</b>每次只交给你一个 5～20 分钟的小任务，做完才继续。</div>
-      <div class="card"><b>顺手教提示词</b>教你怎么给 AI 写提示词，附可直接复制的模板。</div>
-      <div class="card"><b>什么都讲明白</b>先讲人话再讲术语，报错也能变成一堂课。</div>
-      <div class="card"><b>帮你记住进度</b>每条回复结尾附一张进度卡，换对话也不丢项目。</div>
+      <div class="card"><b>把你放进学习路径</b>HTML/CSS → JavaScript → git → 部署 → 数据与 API → 进阶。缺哪一级，就教哪一级。</div>
+      <div class="card"><b>把真实工程带进来</b>第一天就用 git、尽早部署、功能需要时就上 API 和数据库。</div>
+      <div class="card"><b>一次一小步</b>每轮只交一个具体小任务；跟得上就给你更大块。</div>
+      <div class="card"><b>顺手教提示词</b>7 个可直接复制的模板，从规划到代码审查都有。</div>
+      <div class="card"><b>绝不丢进度</b>每条回复结尾附一张进度卡，换新对话也能接着做。</div>
     </div>
+  </section>
+
+  <section id="path">
+    <h2>学习路径</h2>
+    <p>每一级 = 一项技能 + 一个能证明它的项目：</p>
+    <ul class="rungs">
+      <li><b>1 · HTML/CSS</b> 个人主页 → 一个别人能打开的链接</li>
+      <li><b>2 · JavaScript</b> 习惯打卡 / GPA 计算器 → 浏览器里能跑</li>
+      <li><b>3 · git/GitHub</b> 每个项目都在仓库里 → 干净的历史</li>
+      <li><b>4 · 部署</b> Vercel / Netlify / GitHub Pages → 能写进简历的网址</li>
+      <li><b>5 · 数据与 API</b> JSON、SQLite → 刷新不丢的真实数据</li>
+      <li><b>6 · 进阶</b> React、FastAPI 或大模型 API → 一个全栈简历作品</li>
+    </ul>
   </section>
 
   <section id="demo">
     <h2>看一段示范</h2>
     <div class="chat">
-      <div class="msg user"><b>你</b>我想做一个网站。</div>
-      <div class="msg coach"><b>教练</b>好！写代码之前，先问四个小问题：<br>1. 网站是给谁用的？<br>2. 它最重要的一件事是什么？<br>3. 第一版肯定不需要什么？<br>4. 最后希望它在哪运行？</div>
-      <div class="msg user"><b>你</b>是我的摄影作品集，别人能看照片、能联系我。不要支付功能。以后想放到网上。</div>
-      <div class="msg coach"><b>教练</b>清楚了，这就是一个好的最小版：一个页面，展示你的照片 + 一个联系方式。第一版不做：评论、多页面、后台、支付。<br><br>计划：第 0 阶段定范围 → 第 1 阶段建文件 → 第 2 阶段页面结构 → 第 3 阶段样式 → 第 4 阶段放真实照片 → 第 5 阶段本地测试 → 第 6 阶段上线。<br><br><b>现在只做一件事：</b>建好项目文件夹和一个空的 HTML 文件。做完告诉我，我带你下一步。</div>
-      <div class="progress">进度卡<br>- 项目：摄影作品集<br>- 阶段：第 1/6 阶段 — 建项目文件<br>- 已完成：定好最小版范围<br>- 现在：建文件夹和一个空 HTML 文件<br>- 下一步：搭页面结构</div>
+      <div class="msg user"><b>你</b>我想做一个我们学校的课程表网站。</div>
+      <div class="msg coach"><b>教练</b>好选题。三个小问题：<br>1. 第一版应该做什么？<br>2. 还有谁会用它？<br>3. 你已经会什么——任何语言、git 或终端？</div>
+      <div class="msg user"><b>你</b>第一版：显示本周课程，能手动添加和删除。先给我自己用。写过一点 HTML，没用过 git。</div>
+      <div class="msg coach"><b>教练</b>清楚了。第一版 = 一个页面：添加课程、看到周课表、保存在浏览器里。第一版不做：账号、分享、从教务系统导入。<br><br>按学习路径，你大概在第 2 级——接下来补 JavaScript，过程中我们会加上 git 和部署。<br><br>计划：第 0 阶段定范围 → 1 骨架 + git 仓库 → 2 周课表网格 → 3 添加/删除课程 → 4 浏览器存储 → 5 打磨 + 测试 → 6 部署到 Vercel + 自定义域名。<br><br><b>现在只做一件事：</b>建好项目文件夹并建一个 git 仓库。做完告诉我，我带你下一步。</div>
+      <div class="progress">进度卡<br>- 项目：课程表网站<br>- 阶段：第 1/6 阶段——骨架 + git 仓库<br>- 已完成：定好第一版范围<br>- 现在：建文件夹、建 git 仓库<br>- 下一步：做周课表网格</div>
     </div>
   </section>
 
@@ -143,7 +159,10 @@
       <li><code>/check</code> 检查项目进度和遗漏</li>
       <li><code>/error</code> 进入报错排查模式</li>
       <li><code>/explain</code> 逐行解释我贴的代码</li>
-      <li><code>/ideas</code> 推荐一个练手项目</li>
+      <li><code>/ideas</code> 推荐一个符合我水平的项目</li>
+      <li><code>/teach</code> 讲透一个概念，附练习</li>
+      <li><code>/review</code> 审查我的代码，给理由</li>
+      <li><code>/stack</code> 对比技术选型并推荐</li>
       <li><code>/retrospective</code> 复盘我学到了什么</li>
     </ul>
   </section>
@@ -159,7 +178,7 @@
     <h3>Claude Code / Cursor</h3>
     <p>把文件夹放进对应工具的 skills 目录（例如 <code>~/.claude/skills/</code>，或 Cursor 项目里的 <code>.agents/skills</code>）。</p>
     <h3>使用</h3>
-    <p>开新对话，说一句模糊想法，比如<em>"我想做一个网站。"</em>如果 skill 没有自动加载，就说<em>"使用 new-project-planner 这个 skill。"</em></p>
+    <p>开新对话，说一句模糊想法，比如<em>"我想做一个课程表网站。"</em>如果 skill 没有自动加载，就说<em>"使用 new-project-planner 这个 skill。"</em></p>
   </section>
 </main>
 

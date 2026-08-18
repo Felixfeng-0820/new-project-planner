@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>new-project-planner — a vibe-coding coach for AI beginners</title>
+<title>new-project-planner — a vibe-coding coach for students and smart beginners</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -37,7 +37,7 @@
     letter-spacing: .02em;
   }
   h1 { font-size: 40px; margin: 16px 0 8px; }
-  .tagline { color: var(--muted); font-size: 18px; max-width: 560px; margin: 0 auto; }
+  .tagline { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
   .buttons { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-block;
@@ -57,6 +57,9 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
   .card b { display: block; margin-bottom: 4px; }
+  .rungs { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+  .rungs li { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+  .rungs b { color: var(--accent); }
   .chat { display: flex; flex-direction: column; gap: 10px; }
   .msg { max-width: 82%; padding: 10px 14px; border-radius: 12px; font-size: 15px; }
   .msg b { display: block; font-size: 12px; margin-bottom: 2px; opacity: .75; }
@@ -89,7 +92,6 @@
   .lang { text-align: right; padding-top: 16px; font-size: 14px; }
   .lang a { text-decoration: none; color: var(--muted); margin-left: 10px; }
   .lang a.active { color: var(--accent); font-weight: 600; }
-  ul.plain { margin: 6px 0 0; padding-left: 20px; }
 </style>
 </head>
 <body>
@@ -102,7 +104,7 @@
 <header>
   <span class="badge">Agent Skill · for Codex, Claude Code, Cursor, DeepSeek Harness</span>
   <h1>new-project-planner</h1>
-  <p class="tagline">An Agent Skill that turns your AI assistant into a patient vibe-coding coach for complete beginners.</p>
+  <p class="tagline">An Agent Skill that turns your AI assistant into a vibe-coding coach for college students and smart beginners — from a vague idea to a deployed, portfolio-worthy project.</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/new-project-planner">View on GitHub</a>
     <a class="btn" href="#install">How to install</a>
@@ -112,25 +114,38 @@
 <main>
   <section id="what">
     <h2>What it does</h2>
-    <p>You say <em>"I want to build a website"</em> and nothing else. Instead of dumping a wall of code, your AI becomes a coach who:</p>
+    <p>You say <em>"I want to build a course-schedule website"</em> and nothing else. Instead of dumping a wall of code, your AI becomes a coach who:</p>
     <div class="grid">
       <div class="card"><b>Clarifies first</b>Agrees on the goal and a minimal first version before writing any code.</div>
-      <div class="card"><b>Breaks it down</b>Splits the project into clear phases, each with a definition of done.</div>
-      <div class="card"><b>One small step</b>Hands you exactly one 5–20 minute task at a time, then waits.</div>
-      <div class="card"><b>Teaches prompts</b>Shows you how to write good AI prompts, with ready-to-copy templates.</div>
-      <div class="card"><b>Explains everything</b>Plain language first, technical terms second. Errors become lessons.</div>
-      <div class="card"><b>Remembers with you</b>Ends every reply with a progress card so you never lose your place.</div>
+      <div class="card"><b>Places you on a learning path</b>HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper. Teaches the rung you are missing.</div>
+      <div class="card"><b>Builds real engineering in</b>git from day one, deployment early, an API or database when the feature needs it.</div>
+      <div class="card"><b>One step at a time</b>Exactly one small task per turn — bigger chunks when you keep up.</div>
+      <div class="card"><b>Teaches prompts</b>7 ready-to-copy prompt templates, from planning to code review.</div>
+      <div class="card"><b>Never loses your place</b>Every reply ends with a progress card, so a new chat can resume where you left off.</div>
     </div>
+  </section>
+
+  <section id="path">
+    <h2>The learning path</h2>
+    <p>Each rung is a skill plus a project that proves it:</p>
+    <ul class="rungs">
+      <li><b>1 · HTML/CSS</b> a personal page → a link people can open</li>
+      <li><b>2 · JavaScript</b> a habit tracker or GPA calculator → works in the browser</li>
+      <li><b>3 · git/GitHub</b> every project in a repo → clean history</li>
+      <li><b>4 · Deployment</b> Vercel / Netlify / GitHub Pages → a resume-ready URL</li>
+      <li><b>5 · Data & APIs</b> JSON, SQLite → real data that survives refresh</li>
+      <li><b>6 · Going deeper</b> React, FastAPI, or an LLM API → a full-stack portfolio piece</li>
+    </ul>
   </section>
 
   <section id="demo">
     <h2>See it in action</h2>
     <div class="chat">
-      <div class="msg user"><b>You</b>I want to build a website.</div>
-      <div class="msg coach"><b>Coach</b>Nice! Before any code, four quick questions:<br>1. What is the website for, and who will visit it?<br>2. What is the one most important thing it must do?<br>3. Anything it definitely does NOT need in the first version?<br>4. Where should it live in the end?</div>
-      <div class="msg user"><b>You</b>It's a portfolio for my photography. People should see my photos and contact me. No payments. On the internet, eventually.</div>
-      <div class="msg coach"><b>Coach</b>Clear — that is a good v1: one page that shows your photos and has a contact link. Not in v1: comments, multiple pages, an admin panel, payments.<br><br>The plan: Phase 0 scope → Phase 1 create files → Phase 2 page structure → Phase 3 looks → Phase 4 real photos → Phase 5 test → Phase 6 deploy.<br><br><b>Do only this now:</b> create the project folder and one empty HTML file. Tell me when it is done and I will take you to the next step.</div>
-      <div class="progress">Progress card<br>- Project: photography portfolio<br>- Phase: 1 of 6 — create the project files<br>- Done: agreed on v1 scope<br>- Now: create the folder and one empty HTML file<br>- Next: build the page structure</div>
+      <div class="msg user"><b>You</b>I want to build a course-schedule website for my campus.</div>
+      <div class="msg coach"><b>Coach</b>Good pick. Three quick questions:<br>1. What should v1 do?<br>2. Who else will use it?<br>3. What do you already know — any language, git, or the terminal?</div>
+      <div class="msg user"><b>You</b>v1: show this week's classes, add or delete courses by hand. Just me for now. I've written a little HTML. No git.</div>
+      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: add courses, see the week grid, saved in the browser. Not in v1: accounts, sharing, importing from the school system.<br><br>You are around rung 2 of the learning path — JavaScript next, and we will add git and deployment along the way.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 week grid → 3 add/delete courses → 4 browser storage → 5 polish + test → 6 deploy to Vercel + custom domain.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
+      <div class="progress">Progress card<br>- Project: course-schedule website<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: build the week grid</div>
     </div>
   </section>
 
@@ -144,7 +159,10 @@
       <li><code>/check</code> review progress and gaps</li>
       <li><code>/error</code> troubleshoot an error like a teacher</li>
       <li><code>/explain</code> explain pasted code line by line</li>
-      <li><code>/ideas</code> suggest a beginner project to build</li>
+      <li><code>/ideas</code> suggest a project matched to your level</li>
+      <li><code>/teach</code> explain a concept, with exercises</li>
+      <li><code>/review</code> review your code, with reasons</li>
+      <li><code>/stack</code> compare tech options and recommend</li>
       <li><code>/retrospective</code> summarize what you learned</li>
     </ul>
   </section>
@@ -160,7 +178,7 @@
     <h3>Claude Code / Cursor</h3>
     <p>Put the folder into the tool's skills directory (for example <code>~/.claude/skills/</code>, or the <code>.agents/skills</code> project folder).</p>
     <h3>Use it</h3>
-    <p>In a new chat, just say a vague idea, like <em>"I want to build a website."</em> If the skill does not load automatically, say <em>"Use the new-project-planner skill."</em></p>
+    <p>In a new chat, just say a vague idea, like <em>"I want to build a course-schedule website."</em> If the skill does not load automatically, say <em>"Use the new-project-planner skill."</em></p>
   </section>
 </main>
 
