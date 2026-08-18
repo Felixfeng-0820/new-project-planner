@@ -11,10 +11,10 @@ A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and sim
 The builder:
 
 - states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
-- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), corrupt data warns instead of silently wiping, git clean with a secrets gate per commit
-- verifies before it claims: a feature is done when its checks pass, not when a button reacts; a small repeatable `tests/check.sh` runs in every phase
+- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), corrupt data warns and offers an export instead of silently wiping, git clean with an assignment-aware secrets gate per commit (no false alarms on prose words)
+- verifies before it claims: a feature is done when its checks pass, not when a button reacts; every phase runs `tests/check.sh` (static checks) plus real behavior tests (`node tests/logic.test.js`) that assert the core logic — and proves `.gitignore` actually works
 - asks before acting: creating a repo, pushing, or deploying always waits for your explicit OK — being logged in is not permission
-- protects your work: never resets or overwrites your own uncommitted changes, never force-pushes; on failure it reverts only its own edits
+- protects your work: records a worktree baseline before touching anything, never edits your pre-existing files, never resets or overwrites your uncommitted changes, never force-pushes; on failure it reverts only its own edits
 - deploys honestly: checks auth, gets your OK, then deploys and verifies the public URL — or hands you a short checklist (login + confirm + caveats). It never claims a URL it did not open and verify
 - teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified) and keeps chat output sparse — no progress cards, no filler, then continues automatically
 - stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
