@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big Jump — one vague idea in, a live product out</title>
+<meta name="description" content="Big Jump turns substantial software ideas into verified, explainable releases across web, API, CLI, data, libraries, mobile, and desktop.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Big Jump — one vague idea in, verified software out</title>
 <style>
   :root {
     --bg: #f7f7f9;
@@ -98,7 +100,7 @@
 <header>
   <span class="badge">Agent Skill · for Codex, Claude Code, Cursor, DeepSeek Harness</span>
   <h1>Big Jump</h1>
-  <p class="tagline">One vague idea in, a <em>verified</em> product out. Hand your AI one sentence — it breaks the idea down, builds the whole project itself, checks its own work against a written acceptance list, and goes live at a public URL the moment your accounts are connected. Honestly — never by faking it.</p>
+  <p class="tagline">One vague idea in, <em>verified</em> software out. Big Jump routes the work by product type and risk, builds the smallest useful release, and proves it through the real interface — whether that is a browser, API, CLI, data pipeline, package, simulator, or desktop app.</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/Felixfeng-0820/big-jump">View on GitHub</a>
     <a class="btn" href="#install">How to install</a>
@@ -107,23 +109,23 @@
 
 <main>
   <section id="hooks">
-    <h2>For students like you</h2>
+    <h2>For builders making a real jump</h2>
     <ul class="hooks">
-      <li>Have you ever seen a classmate show off a website they built by themselves, and thought: I want to do that too — but I have no idea where to start?</li>
-      <li>Do you want a project with a real URL that anyone can open — not a page that only runs on your own laptop?</li>
-      <li>Do you want to skip the toy tutorials and build something you can actually put on your resume?</li>
+      <li>Have a useful idea, but do not know whether it should be a web app, API, CLI, data system, library, or app?</li>
+      <li>Need more than generated code — tests at the real boundary, honest limitations, and a safe path through an existing repository?</li>
+      <li>Want to move beyond toy tutorials without pretending that every product needs a public URL?</li>
     </ul>
-    <p>If you nodded to any of these, this skill is for you. It turns your AI assistant into an autonomous builder: one vague sentence in, a deployed product out — and a short lesson after every module.</p>
+    <p>Big Jump turns a coding agent into an autonomous builder-coach. It chooses a practical route, preserves your work, builds in testable slices, and teaches one useful concept per phase.</p>
   </section>
 
   <section id="what">
     <h2>How it works</h2>
     <div class="grid">
-      <div class="card"><b>Runs the workflow</b>You say one vague sentence. It states its assumptions in one line, gives a direction, and lists the phases — each with a written definition of done — then starts building. No interviews, no "continue?" after every step.</div>
-      <div class="card"><b>Verifies before it claims</b>Walks the main path, tries weird inputs, reloads to prove persistence, watches the console for errors and 404s — plus a small repeatable check script every phase. A feature is done when its checks pass — not when a button reacts.</div>
+      <div class="card"><b>Routes by product</b>Selects web, backend/API, CLI/automation, data/AI, library/SDK, mobile/desktop, or a combination. Existing projects keep their native stack and conventions.</div>
+      <div class="card"><b>Verifies before it claims</b>Matches each claim to fresh static, logic, integration, interface, or release evidence. A unit test never stands in for an untested browser, package, model, or device flow.</div>
       <div class="card"><b>Teaches after each module</b>A 4-line recap per phase: what was done, why this way, what you learned, and what was verified. Sparse output, no progress cards, then it moves on automatically.</div>
-      <div class="card"><b>Stops only for real blockers</b>An error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment.</div>
-      <div class="card"><b>Deploys honestly</b>Asks your OK before creating a repo or deploying — auth is not permission. Then verifies the URL, or hands you a short checklist. Never claims a URL it did not open.</div>
+      <div class="card"><b>Stops only at real boundaries</b>Missing authority, a secret or paid resource, sensitive production data, a difficult-to-reverse choice, or a blocker with no remaining safe diagnostic path.</div>
+      <div class="card"><b>Releases honestly</b>Asks before unapproved external actions, then verifies the actual delivery surface. A public URL, package, model artifact, or app build is only claimed when it was really checked.</div>
       <div class="card"><b>Protects your work</b>Never resets or overwrites your uncommitted changes, never force-pushes; reverts only its own edits.</div>
       <div class="card"><b>Adapts to your setup</b>Runs the build itself when it has a terminal; in a plain chat it hands you files and exact commands instead — and never claims to have run what it couldn't.</div>
       <div class="card"><b>Finds your direction</b>No idea what to build? A problem-hunting method and a 3-question picker turn "I don't know" into a product-shaped tool.</div>
@@ -133,9 +135,9 @@
   <section id="demo">
     <h2>See the workflow in action</h2>
     <div class="chat">
-      <div class="msg user"><b>You</b>I want to build an AI tool that turns PDFs into summaries I can ask questions about.</div>
-      <div class="msg coach"><b>Big Jump</b>Assumption: single-page web app, one PDF at a time, no accounts. Direction: an "AI document reader" — upload → summary → ask questions. Plan: 6 phases. Starting now.<br><br>[Phase 1: creates the project and a git repo, commits.]<br><br>Phase 1 recap: we made the folder and a git repo. Why: git saves every version, so nothing can permanently break the project. You learned: a commit is a save point.<br><br>[Phase 2: deploys a hello-world page and reports the URL.]<br><br>Phase 2 recap: your first page is live at [URL]. Why: deploying early means a real URL exists from day one. You learned: deploying is putting files on a server so others can open them.<br><br>[Phases 3–6 run the same way — build, verify, commit, recap, continue — without asking.]</div>
-      <div class="msg phase"><b>End</b>Done — the AI document reader is live at [URL]. It uploads a PDF, summarizes it, and answers questions about it. Upgrade ideas: (1) multi-file library, (2) a database for past documents, (3) accounts for your classmates. Want any of these, or should we start your next project?</div>
+      <div class="msg user"><b>You</b>Build a macOS and Linux CLI that renames photos by EXIF date. Dry-run by default, handle collisions, and never test on my only copies.</div>
+      <div class="msg coach"><b>Big Jump</b>Route: new build · CLI/automation · destructive-operation overlay. Outcome: preview a deterministic rename plan, then apply it only after explicit confirmation. Non-goals: editing photo contents or testing on originals.<br><br>[Slice 1: parse copy-only fixtures and print a stable dry-run plan.]<br><br>Evidence: unit cases for missing dates and name collisions, plus a real subprocess run in a temporary directory.<br><br>[Slice 2: add confirmed apply, idempotency, interruption recovery, packaging, and a clean-install smoke test.]</div>
+      <div class="msg phase"><b>End</b>Verified on the platforms actually run: dry-run leaves files untouched; confirmed apply handles collisions; a second run makes no further changes; clean installation exposes the command. Any untested platform is named as a limitation, not implied as supported.</div>
     </div>
   </section>
 
@@ -143,15 +145,12 @@
     <h2>Quick commands</h2>
     <ul class="commands">
       <li><code>/pause</code> stop the auto-flow and wait for me</li>
-      <li><code>/next</code> continue to the next step</li>
-      <li><code>/explain</code> explain pasted code line by line</li>
-      <li><code>/review</code> review my code, with reasons</li>
-      <li><code>/error</code> troubleshoot my error step by step</li>
-      <li><code>/deploy</code> walk me through putting it online</li>
-      <li><code>/showcase</code> README, screenshot, demo link, resume bullet</li>
-      <li><code>/teach</code> explain a concept, with exercises</li>
-      <li><code>/stack</code> compare tech options and recommend</li>
-      <li><code>/ideas</code> no idea what to build? run the direction finder</li>
+      <li><code>/test</code> run the current fast evidence set</li>
+      <li><code>/test full</code> run the acceptance evidence set</li>
+      <li><code>/ideas</code> find and select a product direction</li>
+      <li><code>/explain</code> explain the current slice in plain language</li>
+      <li><code>/review</code> inspect scope, correctness, maintainability, and evidence</li>
+      <li><code>/deploy</code> follow release choices and permission gates</li>
       <li><code>/retrospective</code> summarize what I learned</li>
     </ul>
   </section>
@@ -161,13 +160,13 @@
     <h3>Codex — one command</h3>
     <p>Download the repository and run:</p>
     <pre>bash install.sh</pre>
-    <p>Or copy manually so the file sits at <code>~/.codex/skills/big-jump/SKILL.md</code>.</p>
+    <p>Or copy the complete <code>big-jump</code> folder into <code>~/.codex/skills/</code>. The references, assets, evals, and validation script are part of the skill; copying only <code>SKILL.md</code> is incomplete.</p>
     <h3>DeepSeek Harness</h3>
     <p>Put the <code>big-jump</code> folder into <code>.dsh/skills</code> or <code>.agents/skills</code> in your project, or into <code>~/.dsh/skills</code>.</p>
     <h3>Claude Code / Cursor</h3>
     <p>Put the folder into the tool's skills directory (for example <code>~/.claude/skills/</code>, or the <code>.agents/skills</code> project folder).</p>
     <h3>Use it</h3>
-    <p>In a new chat, just say a vague idea, like <em>"I want to build an AI tool that turns PDFs into summaries I can ask questions about."</em> If the skill does not load automatically, say <em>"Use the big-jump skill."</em></p>
+    <p>In a new chat, describe a substantial outcome, such as <em>"Build a safe photo-renaming CLI with dry-run and recovery."</em> If the skill does not load automatically, say <em>"Use the big-jump skill."</em></p>
   </section>
 </main>
 

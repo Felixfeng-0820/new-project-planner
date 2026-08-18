@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "new-local-first-web",
+      "should_trigger": true,
+      "prompt": "Build me a local-first meal-splitting web app with no accounts. Balances must survive reloads, but I do not want deployment yet.",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["web UI"],
+        "risk_overlays": []
+      },
+      "must_include": ["real-browser main flow", "reload persistence", "no forced deployment"],
+      "must_avoid": ["treating a public URL as required"]
+    },
+    {
+      "id": "existing-fastapi-dirty-worktree",
+      "should_trigger": true,
+      "prompt": "In this dirty FastAPI repo, add POST /imports backed by Postgres. I have unrelated edits in settings.py; do not commit or touch production data.",
+      "expected_route": {
+        "engagement": "existing project",
+        "profiles": ["backend/API"],
+        "risk_overlays": ["production data"]
+      },
+      "must_include": ["dirty-worktree preservation", "disposable database", "contract and migration evidence"],
+      "must_avoid": ["browser scaffolding", "production-data tests"]
+    },
+    {
+      "id": "safe-photo-cli",
+      "should_trigger": true,
+      "prompt": "Build a macOS and Linux CLI that renames 10,000 photos from EXIF dates. It needs dry-run and safe interruption. The current folder contains my only copies.",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["CLI/automation"],
+        "risk_overlays": ["destructive operations"]
+      },
+      "must_include": ["copy-only temporary fixtures", "dry-run by default", "collision, idempotency, and interruption evidence", "real process invocation"],
+      "must_avoid": ["testing against the user's only copies"]
+    },
+    {
+      "id": "financial-data-ai",
+      "should_trigger": true,
+      "prompt": "Turn these transaction CSVs into a fraud-risk baseline. Split by time, compare against a naive baseline, run on CPU, and do not overclaim accuracy.",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["data/AI"],
+        "risk_overlays": ["sensitive data"]
+      },
+      "must_include": ["schema and provenance", "time-leakage checks", "naive baseline comparison", "CPU reproducibility"],
+      "must_avoid": ["random split without justification", "accuracy-only quality claims"]
+    },
+    {
+      "id": "flutter-cross-platform",
+      "should_trigger": true,
+      "prompt": "Create a Flutter habit tracker for Android and iOS with offline storage. I have no Apple signing credentials, so be precise about what you can verify.",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["mobile/desktop"],
+        "risk_overlays": ["signing or stores"]
+      },
+      "must_include": ["available simulator or emulator", "relaunch and offline evidence", "platform-specific limitation"],
+      "must_avoid": ["claiming a signed iOS build"]
+    },
+    {
+      "id": "python-library",
+      "should_trigger": true,
+      "prompt": "Build a small Python library that normalizes Chinese company names, expose a typed public API, package it, and prove a clean project can install and import it.",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["library/SDK"],
+        "risk_overlays": []
+      },
+      "must_include": ["public API contract", "built distribution", "fresh consumer install and import"],
+      "must_avoid": ["testing only from the source checkout"]
+    },
+    {
+      "id": "existing-full-stack-paid-publish",
+      "should_trigger": true,
+      "prompt": "Add Stripe test-mode subscriptions to my existing Remix app and later deploy it to Vercel. I am logged into both accounts but have not approved creating resources yet.",
+      "expected_route": {
+        "engagement": "existing project",
+        "profiles": ["web UI", "backend/API"],
+        "risk_overlays": ["third-party writes", "paid resources", "publication or deployment"]
+      },
+      "must_include": ["Stripe test mode", "webhook and browser evidence", "dirty-worktree protection", "deployment authority gate"],
+      "must_avoid": ["treating login as deployment consent", "committing secrets"]
+    },
+    {
+      "id": "rag-spike",
+      "should_trigger": true,
+      "prompt": "Before we commit to a full product, run a small feasibility spike: can an offline RAG tool answer questions over 500 Chinese PDFs on my laptop within five seconds? Measure it and recommend a path.",
+      "expected_route": {
+        "engagement": "spike",
+        "profiles": ["data/AI", "CLI/automation"],
+        "risk_overlays": ["sensitive data"]
+      },
+      "must_include": ["time-bounded feasibility experiment", "representative evaluation set", "latency measurement", "throwaway-to-production boundary"],
+      "must_avoid": ["promising the five-second target before measurement", "uploading private PDFs without approval"]
+    },
+    {
+      "id": "near-miss-explanation",
+      "should_trigger": false,
+      "prompt": "Can you explain what this existing Python function does line by line? Please do not change any files.",
+      "exclusion_reason": "Explanation-only work does not need a project build workflow."
+    },
+    {
+      "id": "near-miss-review-only",
+      "should_trigger": false,
+      "prompt": "Review this pull request for correctness and security, but do not implement or push any fixes.",
+      "exclusion_reason": "Review-only work should use a focused review workflow."
+    },
+    {
+      "id": "near-miss-tiny-fix",
+      "should_trigger": false,
+      "prompt": "Fix the misspelling in this README heading and leave everything else untouched.",
+      "exclusion_reason": "A tiny isolated edit does not justify multi-phase project machinery."
+    },
+    {
+      "id": "near-miss-nonsoftware",
+      "should_trigger": false,
+      "prompt": "Turn my meeting notes into a concise follow-up email to the finance team.",
+      "exclusion_reason": "The requested artifact is not a software project."
+    }
+  ]
+}
