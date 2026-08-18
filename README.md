@@ -7,11 +7,19 @@ When a beginner says "I want to build a website" and nothing else, this skill ma
 - clarify the goal and a minimal first version **before** writing code
 - break the project into clear phases
 - guide one small 5–20 minute step at a time
-- teach prompt-writing along the way
+- teach prompt-writing along the way, with ready-to-copy prompt templates
+- say no honestly when an idea is too big for a first version
+- keep a "progress card" at the end of every reply, so the user can resume after a break or in a new chat
 - explain every change and every error in plain language
 - never dump a huge amount of code at once
 
-It also adds quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/retrospective`.
+It also includes:
+
+- 5 ready-to-copy prompt templates (plan a project, build a feature, report an error, explain code, retrospective)
+- a worked example of a good coaching conversation
+- 10 beginner project ideas with minimal first versions
+- a plain-language glossary of common terms
+- quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/explain`, `/ideas`, `/retrospective`
 
 ## Install
 
