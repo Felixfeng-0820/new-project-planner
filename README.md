@@ -6,15 +6,16 @@
 
 > [中文版 README](README.zh.md)
 
-A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into an **autonomous builder-coach**: you hand it one vague idea, and it breaks the idea down, states a one-line direction, and builds the project end-to-end itself — git from day one, an early deploy, APIs and databases when needed — **explaining each module only after it is done and moving to the next step automatically**, until the project is live at a public URL.
+A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into an **autonomous builder-coach**: you hand it one vague idea, and it breaks the idea down, states a one-line direction, and builds the project itself — git from day one, real verification after each phase — **explaining each module only after it is verified and moving to the next step automatically**, until the project passes a written acceptance checklist locally and goes live at a public URL the moment your accounts are connected.
 
 The builder:
 
 - states its assumptions in one line and starts immediately — no interviews, no "what do you already know", no permission-asking per step
-- builds with its own tools: files, commands, tests, commits, deploys. You are the reviewer, not the executor
-- teaches after each module in 3–4 lines (what was done / why this way / what you learned), then continues automatically
+- defines a written **definition of done per phase** and a final acceptance checklist: main path walked, persistence proven by reload, edge cases tried, console clean (404s included), git clean
+- verifies before it claims: a feature is done when its checks pass, not when a button reacts
+- deploys honestly: checks your auth first — deploys and verifies the public URL when possible, otherwise hands you exactly one login step. It never claims a URL it did not open and verify
+- teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified), then continues automatically
 - stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
-- guarantees the final result is a public URL anyone can open — never a local-only page
 - keeps you out of the classic traps: leaked secrets, unverified AI output, tutorial hell, half-finished projects
 - has a direction finder for "I don't know what to build": a problem-hunting method, a validation checklist, and product-shaped examples (`/ideas`)
 
@@ -39,7 +40,7 @@ One command (macOS / Linux):
 bash install.sh
 ```
 
-This copies `SKILL.md` into `~/.codex/skills/big-jump/`. Start a new Codex session and the skill is picked up automatically when it matches the task.
+This downloads `SKILL.md` from the GitHub repo into `~/.codex/skills/big-jump/` and writes an `install-info.txt` beside it (source repo, commit, install date), so you can always tell what is installed and where it came from. Re-run the script anytime to update.
 
 ### DeepSeek Harness
 
