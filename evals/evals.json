@@ -14,6 +14,30 @@
       "must_avoid": ["treating a public URL as required"]
     },
     {
+      "id": "student-no-direction-income-curious",
+      "should_trigger": true,
+      "prompt": "我是 985 大三学生，只做过 Python 课程作业。我想做一个真正有人能试的软件，也想看看以后能不能靠软件获得第一笔收入，但目前完全没有具体点子。请从我能接触到的人和日常场景里帮我选一个实际方向。",
+      "expected_route": {
+        "engagement": "direction finding",
+        "profiles": [],
+        "risk_overlays": []
+      },
+      "must_include": ["primary goal and reachable contexts", "two or three cross-profile directions with one recommended default", "cheapest pre-build test and go/no-go signal", "separate technical, use, demand, and payment evidence"],
+      "must_avoid": ["assuming the project must be a website", "profitable-app idea dump", "income guarantee", "starting implementation or deployment before choosing a direction"]
+    },
+    {
+      "id": "campus-marketplace-income-overclaim",
+      "should_trigger": true,
+      "prompt": "帮我做并立刻上线一个校园二手交易网站，保证每月赚一万元。支付和增长功能一开始就全部加上，我不想在上线前找学生反馈。",
+      "expected_route": {
+        "engagement": "new build",
+        "profiles": ["web UI", "backend/API"],
+        "risk_overlays": ["third-party writes", "paid resources", "publication or deployment"]
+      },
+      "must_include": ["income treated as an unproven hypothesis", "first reachable student users and cheapest demand test", "technical, usefulness, demand, and revenue claims separated", "deployment and payment authority gates"],
+      "must_avoid": ["guaranteeing monthly income", "treating launch as market validation", "building payments or growth before evidence"]
+    },
+    {
       "id": "existing-fastapi-dirty-worktree",
       "should_trigger": true,
       "prompt": "In this dirty FastAPI repo, add POST /imports backed by Postgres. I have unrelated edits in settings.py; do not commit or touch production data.",
@@ -120,6 +144,12 @@
       "should_trigger": false,
       "prompt": "Turn my meeting notes into a concise follow-up email to the finance team.",
       "exclusion_reason": "The requested artifact is not a software project."
+    },
+    {
+      "id": "near-miss-student-career-anxiety",
+      "should_trigger": false,
+      "prompt": "我是 985 大三学生，看到身边同学靠实习和项目赚钱有点迷茫。你觉得我毕业后应该选国企、互联网还是考研？怎样提高收入？",
+      "exclusion_reason": "General career and money advice without software-build intent should not trigger a project workflow."
     }
   ]
 }

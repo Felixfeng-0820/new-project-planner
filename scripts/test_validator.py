@@ -65,6 +65,41 @@ def main() -> int:
         eval_path.write_text(json.dumps(eval_data, indent=2) + "\n", encoding="utf-8")
         validate(invalid_overlay, should_succeed=False)
 
+        premature_profile = copy_skill(temp_root / "premature-profile")
+        eval_path = premature_profile / "evals" / "evals.json"
+        eval_data = json.loads(eval_path.read_text(encoding="utf-8"))
+        direction_case = next(
+            case
+            for case in eval_data["cases"]
+            if case["expected_route"]["engagement"] == "direction finding"
+        )
+        direction_case["expected_route"]["profiles"] = ["web UI"]
+        eval_path.write_text(json.dumps(eval_data, indent=2) + "\n", encoding="utf-8")
+        validate(premature_profile, should_succeed=False)
+
+        missing_profile = copy_skill(temp_root / "missing-profile")
+        eval_path = missing_profile / "evals" / "evals.json"
+        eval_data = json.loads(eval_path.read_text(encoding="utf-8"))
+        build_case = next(
+            case
+            for case in eval_data["cases"]
+            if case["expected_route"]["engagement"] == "new build"
+        )
+        build_case["expected_route"]["profiles"] = []
+        eval_path.write_text(json.dumps(eval_data, indent=2) + "\n", encoding="utf-8")
+        validate(missing_profile, should_succeed=False)
+
+        missing_direction = copy_skill(temp_root / "missing-direction")
+        eval_path = missing_direction / "evals" / "evals.json"
+        eval_data = json.loads(eval_path.read_text(encoding="utf-8"))
+        eval_data["cases"] = [
+            case
+            for case in eval_data["cases"]
+            if case.get("expected_route", {}).get("engagement") != "direction finding"
+        ]
+        eval_path.write_text(json.dumps(eval_data, indent=2) + "\n", encoding="utf-8")
+        validate(missing_direction, should_succeed=False)
+
         wrong_directory = copy_skill(temp_root / "wrong-directory", name="other-name")
         validate(wrong_directory, should_succeed=False)
 
@@ -79,8 +114,8 @@ def main() -> int:
             validate(empty_runtime, should_succeed=False)
 
     print(
-        "PASS: validator rejects malformed metadata, route enums, folder-name mismatches, "
-        "and empty runtime files"
+        "PASS: validator rejects malformed metadata, invalid, premature, or missing routes, "
+        "folder-name mismatches, and empty runtime files"
     )
     return 0
 

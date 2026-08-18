@@ -7,13 +7,16 @@ Use guided mode only when the environment cannot run the required commands or in
 For each slice, provide:
 
 1. the intended observable behavior;
-2. each file or patch with its exact path;
-3. one setup command if needed;
-4. one fast verification command;
-5. the expected success signal;
-6. what output the user should return, especially the complete failure block.
+2. the exact folder or application where the user should work and what the action will change;
+3. each file or patch with its exact path;
+4. one setup command if needed;
+5. one fast verification command;
+6. the expected success signal;
+7. what output the user should return, especially the complete failure block.
 
 Prefer a patch or attached files over a wall of unrelated code blocks. Do not ask the user to manually combine ambiguous fragments.
+
+After the initial route and plan, give a beginner only one user action at a time. Prepare a neutral interview script or anonymous observation sheet when real-user validation is needed, but label it **Prepared, not verified** until the user returns actual records. Never invent interviews, signups, repeat use, or payment evidence.
 
 ## Evidence labels
 
