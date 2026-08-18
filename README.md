@@ -4,6 +4,8 @@
 
 🌐 Website: **https://felixfeng-0820.github.io/new-project-planner/**
 
+> [中文版 README](README.zh.md)
+
 A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into a patient vibe-coding coach for beginners.
 
 When a beginner says "I want to build a website" and nothing else, this skill makes the assistant:
