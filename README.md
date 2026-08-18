@@ -20,6 +20,8 @@ The builder:
 - deploys honestly: checks auth, gets your OK, then deploys and verifies the public URL — or hands you a short checklist (login + confirm + caveats). It never claims a URL it did not open and verify
 - teaches after each module in 4 lines (what was done / why this way / what you learned / what was verified) and keeps chat output sparse — no progress cards, no filler, then continues automatically
 - stops only for real blockers: an error it cannot fix alone, a missing secret or account, a choice only you can make, or a payment
+- adapts to its own capabilities: autonomous when it can run commands; in a plain chat it switches to guided mode — files as code blocks plus the exact commands to run — and never claims to have run what it could not
+- handles interruptions and resumes cleanly: mid-flow change requests are folded in or re-planned, never dropped; a new session reads `PROJECT_NOTES.md` and continues from where it left off
 - keeps you out of the classic traps: leaked secrets, unverified AI output, tutorial hell, half-finished projects
 - has a direction finder for "I don't know what to build": a problem-hunting method, a validation checklist, and product-shaped examples (`/ideas`)
 
