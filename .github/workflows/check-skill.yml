@@ -19,7 +19,9 @@ jobs:
         run: test -s SKILL.md
 
       - name: Header has a valid name
-        run: grep -q '^name: [a-z0-9][a-z0-9-]*$' SKILL.md
+        run: |
+          grep -q '^name: [a-z0-9][a-z0-9-]*$' SKILL.md
 
       - name: Header has a description
-        run: grep -q '^description: .\+' SKILL.md
+        run: |
+          grep -q '^description: .\+' SKILL.md
