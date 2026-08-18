@@ -1,8 +1,8 @@
-# new-project-planner
+# Big Jump /「大跨步」
 
-[![check-skill](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml)
+[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml)
 
-🌐 网站：**https://felixfeng-0820.github.io/new-project-planner/**（[中文版](https://felixfeng-0820.github.io/new-project-planner/index.zh.html)）
+🌐 网站：**https://felixfeng-0820.github.io/big-jump/**（[中文版](https://felixfeng-0820.github.io/big-jump/index.zh.html)）
 
 > [English version](README.md)
 
@@ -45,14 +45,14 @@
 bash install.sh
 ```
 
-它会自动把 `SKILL.md` 复制到 `~/.codex/skills/new-project-planner/`。开一个新的 Codex 会话，任务匹配时就会自动生效。
+它会自动把 `SKILL.md` 复制到 `~/.codex/skills/big-jump/`。开一个新的 Codex 会话，任务匹配时就会自动生效。
 
 ### DeepSeek Harness
 
-把 `new-project-planner` 文件夹放进项目里的 `.dsh/skills` 或 `.agents/skills` 目录，或者放进 `~/.dsh/skills`：
+把 `big-jump` 文件夹放进项目里的 `.dsh/skills` 或 `.agents/skills` 目录，或者放进 `~/.dsh/skills`：
 
 ```
-~/.dsh/skills/new-project-planner/SKILL.md
+~/.dsh/skills/big-jump/SKILL.md
 ```
 
 ### Claude Code / Cursor
@@ -69,7 +69,7 @@ bash install.sh
 
 如果 AI 没有自动加载，就明说一句：
 
-> 使用 new-project-planner 这个 skill。
+> 使用 big-jump 这个 skill。
 
 ## 文件说明
 

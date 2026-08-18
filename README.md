@@ -1,8 +1,8 @@
-# new-project-planner
+# Big Jump
 
-[![check-skill](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml)
+[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml)
 
-🌐 Website: **https://felixfeng-0820.github.io/new-project-planner/**
+🌐 Website: **https://felixfeng-0820.github.io/big-jump/**
 
 > [中文版 README](README.zh.md)
 
@@ -45,19 +45,19 @@ One command (macOS / Linux):
 bash install.sh
 ```
 
-This copies `SKILL.md` into `~/.codex/skills/new-project-planner/`. Start a new Codex session and the skill is picked up automatically when it matches the task.
+This copies `SKILL.md` into `~/.codex/skills/big-jump/`. Start a new Codex session and the skill is picked up automatically when it matches the task.
 
 ### DeepSeek Harness
 
-Put the `new-project-planner` folder into a `.dsh/skills` or `.agents/skills` directory inside your project, or into `~/.dsh/skills`:
+Put the `big-jump` folder into a `.dsh/skills` or `.agents/skills` directory inside your project, or into `~/.dsh/skills`:
 
 ```
-~/.dsh/skills/new-project-planner/SKILL.md
+~/.dsh/skills/big-jump/SKILL.md
 ```
 
 ### Claude Code / Cursor
 
-Install the `new-project-planner` folder into the tool's own skills directory (for example `~/.claude/skills/` in Claude Code, or the `.agents/skills` project folder in Cursor).
+Install the `big-jump` folder into the tool's own skills directory (for example `~/.claude/skills/` in Claude Code, or the `.agents/skills` project folder in Cursor).
 
 ## Usage
 
@@ -69,7 +69,7 @@ The assistant, with this skill loaded, should reply as a coach: clarify the idea
 
 If the assistant does not pick the skill up automatically, mention it explicitly:
 
-> Use the new-project-planner skill.
+> Use the big-jump skill.
 
 ## Files
 
