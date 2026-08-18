@@ -12,7 +12,7 @@ The coach opens with hook questions — *"Have you ever seen a classmate show of
 
 - clarify the goal and a minimal first version **before** writing code
 - place the user on a 6-rung learning path (HTML/CSS → JavaScript → git → deployment → APIs/data → going deeper) and teach what they are missing
-- help a lost beginner find a direction: an interest → project map, a campus pain-point → tool map, and a 3-question picker (`/ideas`)
+- help a lost beginner find a direction: a problem-hunting method, a validation checklist, and a 3-question picker that aims at product-shaped tools with real users, not one-off scripts (`/ideas`)
 - break the project into phases with **real engineering**: git from day one, a first deploy in phase 2, an API or database when it is needed
 - **guarantee a public URL as the final result** — never a local-only page; deployment is taught step by step as part of the journey
 - raise the bar: make it work, then make it good, then make it impressive (clean UI, dark mode, real data, custom domain)
@@ -29,7 +29,7 @@ It also includes:
 
 - 9 ready-to-copy prompt templates (plan a project, build a feature, report an error, explain code, retrospective, teach a concept, review code, deploy a project, give me options first)
 - a worked example of a good coaching conversation
-- 10 student-oriented project ideas (portfolio page, GPA calculator, campus marketplace, AI study assistant, …) with minimal first versions and upgrade ideas
+- 10 product-shaped project ideas (portfolio page, AI document reader, creator formatting tool, price watcher, open-data product, …) with minimal first versions and upgrade ideas
 - a plain-language glossary of 33 common terms
 - quick commands: `/start`, `/breakdown`, `/next`, `/teach-prompt`, `/check`, `/error`, `/explain`, `/ideas`, `/teach`, `/review`, `/stack`, `/deploy`, `/showcase`, `/retrospective`
 
@@ -63,7 +63,7 @@ Install the `new-project-planner` folder into the tool's own skills directory (f
 
 In a new chat, just describe a vague idea, for example:
 
-> I want to build a course-schedule website.
+> I want to build an AI tool that turns PDFs into summaries I can ask questions about.
 
 The assistant, with this skill loaded, should reply as a coach: clarify the idea, place you on the learning path, agree on a minimal first version, and hand you one small step.
 

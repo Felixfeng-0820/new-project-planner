@@ -132,7 +132,7 @@
       <div class="card"><b>Deploys for real</b>First deploy in phase 2, and the final result is always a public URL — never a local-only page.</div>
       <div class="card"><b>Raises the bar</b>Make it work, then make it good, then make it impressive: clean UI, dark mode, real data, custom domain.</div>
       <div class="card"><b>Teaches prompts</b>9 ready-to-copy prompt templates, from planning to deployment.</div>
-      <div class="card"><b>Finds your direction</b>No idea what to build? An interest map, a campus pain-point map, and a 3-question picker turn "I don't know" into a concrete v1.</div>
+      <div class="card"><b>Finds your direction</b>No idea what to build? A problem-hunting method and a 3-question picker turn "I don't know" into a product-shaped tool with real users.</div>
       <div class="card"><b>Never loses your place</b>Every reply ends with a progress card, so a new chat can resume where you left off.</div>
     </div>
   </section>
@@ -142,7 +142,7 @@
     <p>Each rung is a skill plus a project that proves it:</p>
     <ul class="rungs">
       <li><b>1 · HTML/CSS</b> a personal page → a link people can open</li>
-      <li><b>2 · JavaScript</b> a habit tracker or GPA calculator → works in the browser</li>
+      <li><b>2 · JavaScript</b> a habit tracker or budget calculator → works in the browser</li>
       <li><b>3 · git/GitHub</b> every project in a repo → clean history</li>
       <li><b>4 · Deployment</b> Vercel / Netlify / GitHub Pages → a resume-ready URL</li>
       <li><b>5 · Data & APIs</b> JSON, SQLite → real data that survives refresh</li>
@@ -153,11 +153,11 @@
   <section id="demo">
     <h2>See it in action</h2>
     <div class="chat">
-      <div class="msg user"><b>You</b>I want to build a course-schedule website for my campus.</div>
-      <div class="msg coach"><b>Coach</b>Great instinct. Quick check: have you seen classmates show off their own websites and thought, "I want that too — but where do I even start?" If yes, this project is how you catch up. Three questions:<br>1. What should v1 do?<br>2. Who else will use it?<br>3. What do you already know — any language, git, or the terminal?</div>
-      <div class="msg user"><b>You</b>v1: show this week's classes, add or delete courses by hand. Just me for now. I've written a little HTML. No git.</div>
-      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: add courses, see the week grid, saved in the browser. Not in v1: accounts, sharing, importing from the school system.<br><br>You are around rung 2 of the learning path — JavaScript next. And note that deployment is required, not optional: you will have a real public URL from phase 2.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 first deploy (hello-world page at a public URL) → 3 week grid → 4 add/delete courses → 5 browser storage → 6 polish, test, custom domain, then share the link.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
-      <div class="progress">Progress card<br>- Project: course-schedule website<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: first deploy — hello-world page at a public URL</div>
+      <div class="msg user"><b>You</b>I want to build an AI tool that turns PDFs I upload into summaries I can ask questions about.</div>
+      <div class="msg coach"><b>Coach</b>Ambitious and doable — a real product: thousands of students pay for tools like this, and you can build v1 with one page and one API. Quick check: have you seen classmates show off their own websites and thought, "I want that too — but where do I even start?" If yes, this project is how you catch up. Three questions:<br>1. What should v1 do?<br>2. Who would use it besides you?<br>3. What do you already know — any language, git, or the terminal?</div>
+      <div class="msg user"><b>You</b>v1: upload a PDF, get a summary, and ask questions about it. My classmates would use it. I've written a little HTML. No git.</div>
+      <div class="msg coach"><b>Coach</b>Clear. v1 = one page: upload a PDF, see a summary, ask questions. Not in v1: accounts, multi-file libraries, subscriptions.<br><br>You are around rung 2 of the learning path, and this project pulls in rung 5–6 ideas — calling an AI API — one step at a time. And note that deployment is required, not optional: you will have a real public URL from phase 2.<br><br>The plan: Phase 0 scope → 1 scaffold + git repo → 2 first deploy (hello-world page at a public URL) → 3 upload page → 4 AI summary (LLM API) → 5 ask questions about the document → 6 polish, test, custom domain, then share it with your class.<br><br><b>Do only this now:</b> create the project folder and start a git repo. Tell me when it is done and I will take you to the next step.</div>
+      <div class="progress">Progress card<br>- Project: AI document reader<br>- Phase: 1 of 6 — scaffold + git repo<br>- Done: agreed on v1 scope<br>- Now: create the folder and start a git repo<br>- Next: first deploy — hello-world page at a public URL</div>
     </div>
   </section>
 
@@ -192,7 +192,7 @@
     <h3>Claude Code / Cursor</h3>
     <p>Put the folder into the tool's skills directory (for example <code>~/.claude/skills/</code>, or the <code>.agents/skills</code> project folder).</p>
     <h3>Use it</h3>
-    <p>In a new chat, just say a vague idea, like <em>"I want to build a course-schedule website."</em> If the skill does not load automatically, say <em>"Use the new-project-planner skill."</em></p>
+    <p>In a new chat, just say a vague idea, like <em>"I want to build an AI tool that turns PDFs into summaries I can ask questions about."</em> If the skill does not load automatically, say <em>"Use the new-project-planner skill."</em></p>
   </section>
 </main>
 
