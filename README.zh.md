@@ -4,8 +4,6 @@
 
 [![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [网站](https://felixfeng-0820.github.io/big-jump/index.zh.html) · [English README](README.md)
 
-**给这样的大学生：看着同学大一大二就自己做出网站和项目，心里又羡慕又憋着一股劲，却不知道从哪下手。**
-
 - 你有没有见过同学晒出自己做的网站，心想：*我也想做——但我根本不知道从哪开始？*
 - 你想要的是一个任何人能打开的公开网址，而不是一个只能在自己电脑上打开的本地网页吗？
 - 你是不是受够了玩具教程，想要一个真正能写进简历的东西？

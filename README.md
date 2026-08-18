@@ -4,8 +4,6 @@
 
 [![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://felixfeng-0820.github.io/big-jump/) · [中文版 README](README.zh.md)
 
-**For the student who watches classmates ship their own websites in freshman year — and wonders where to even start.**
-
 - Have you ever seen a classmate show off a website they built by themselves, and thought: *I want to do that too — but where do I even start?*
 - Do you want a real URL anyone can open — not a page that only runs on your laptop?
 - Are you done with toy tutorials, and ready for something you can actually put on your resume?
