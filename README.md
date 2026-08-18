@@ -1,5 +1,9 @@
 # new-project-planner
 
+[![check-skill](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/new-project-planner/actions/workflows/check-skill.yml)
+
+🌐 Website: **https://felixfeng-0820.github.io/new-project-planner/**
+
 A skill for AI assistants (Codex, Claude Code, Cursor, DeepSeek Harness, and similar tools) that turns them into a patient vibe-coding coach for beginners.
 
 When a beginner says "I want to build a website" and nothing else, this skill makes the assistant:
@@ -27,13 +31,13 @@ This skill uses the standard Agent Skills format (a folder containing a `SKILL.m
 
 ### Codex
 
-Copy the `new-project-planner` folder into `~/.codex/skills/` so the file sits at:
+One command (macOS / Linux):
 
-```
-~/.codex/skills/new-project-planner/SKILL.md
+```bash
+bash install.sh
 ```
 
-Start a new Codex session. The skill is picked up automatically when it matches the task.
+This copies `SKILL.md` into `~/.codex/skills/new-project-planner/`. Start a new Codex session and the skill is picked up automatically when it matches the task.
 
 ### DeepSeek Harness
 
@@ -63,6 +67,9 @@ If the assistant does not pick the skill up automatically, mention it explicitly
 
 - `SKILL.md` — the skill itself
 - `README.md` — this file
+- `docs/index.html` — the showcase website (hosted on GitHub Pages)
+- `install.sh` — one-command installer for Codex
+- `.github/workflows/check-skill.yml` — automatic health check on every push
 - `notes/draft-zh-original.md` — the original Chinese draft this skill was translated from (kept for reference)
 - `LICENSE` — MIT license
 

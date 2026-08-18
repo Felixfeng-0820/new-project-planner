@@ -1,0 +1,25 @@
+name: check-skill
+
+# Every push (and every pull request) runs a quick health check on the skill.
+# If SKILL.md is missing or its header (frontmatter) is broken, the check
+# fails and GitHub shows a red mark on the commit.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: SKILL.md exists and is not empty
+        run: test -s SKILL.md
+
+      - name: Header has a valid name
+        run: grep -q '^name: [a-z0-9][a-z0-9-]*$' SKILL.md
+
+      - name: Header has a description
+        run: grep -q '^description: .\+' SKILL.md
