@@ -2,7 +2,7 @@
 
 > **One vague idea in. Verified software out.**
 
-[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://felixfeng-0820.github.io/big-jump/) · [中文版 README](README.zh.md)
+[![check-skill](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://lysanderphong.github.io/big-jump/) · [中文版 README](README.zh.md)
 
 Big Jump turns a coding agent into an autonomous builder-coach. Give it a substantial product idea and it scopes the smallest useful release, chooses a practical route, builds in testable slices, verifies through the real entry point, protects your existing work, and teaches one concept per phase.
 
@@ -79,10 +79,10 @@ BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
 ### skills.sh (any Agent Skills-compatible tool)
 
 ```bash
-npx skills add felixfeng-0820/big-jump
+npx skills add lysanderphong/big-jump
 ```
 
-Works with Claude Code, Cursor, Codex, and every other agent supported by [skills.sh](https://skills.sh/Felixfeng-0820/big-jump).
+Works with Claude Code, Cursor, Codex, and every other agent supported by [skills.sh](https://skills.sh/LysanderPhong/big-jump).
 
 ### Other Agent Skills-compatible tools
 

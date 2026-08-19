@@ -2,7 +2,7 @@
 
 > **一句模糊想法进，一个验证过的软件产品出。**
 
-[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [网站](https://felixfeng-0820.github.io/big-jump/index.zh.html) · [English README](README.md)
+[![check-skill](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml) · 🌐 [网站](https://lysanderphong.github.io/big-jump/index.zh.html) · [English README](README.md)
 
 Big Jump 把编程 Agent 变成一个自主执行的“建设者 + 教练”。你给它一个有一定规模的产品想法，它会收缩出最小可用版本、选择实际可行的路线、按可测试的切片实现、通过真实入口验证、保护你已有的工作，并在每个阶段只讲一个关键概念。
 
@@ -79,10 +79,10 @@ BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
 ### skills.sh（任何兼容 Agent Skills 的工具）
 
 ```bash
-npx skills add felixfeng-0820/big-jump
+npx skills add lysanderphong/big-jump
 ```
 
-适用于 Claude Code、Cursor、Codex 以及 [skills.sh](https://skills.sh/Felixfeng-0820/big-jump) 支持的所有其他智能体。
+适用于 Claude Code、Cursor、Codex 以及 [skills.sh](https://skills.sh/LysanderPhong/big-jump) 支持的所有其他智能体。
 
 ### 其他兼容 Agent Skills 的工具
 

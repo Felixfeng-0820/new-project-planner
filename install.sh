@@ -3,8 +3,8 @@
 # Usage: bash install.sh
 set -euo pipefail
 
-REPO_URL="https://github.com/Felixfeng-0820/big-jump"
-ARCHIVE_URL="${BIG_JUMP_ARCHIVE_URL:-https://codeload.github.com/Felixfeng-0820/big-jump/tar.gz/refs/heads/main}"
+REPO_URL="https://github.com/LysanderPhong/big-jump"
+ARCHIVE_URL="${BIG_JUMP_ARCHIVE_URL:-https://codeload.github.com/LysanderPhong/big-jump/tar.gz/refs/heads/main}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 REQUESTED_SKILL_DIR="${BIG_JUMP_SKILL_DIR:-${CODEX_HOME:-${HOME}/.codex}/skills/big-jump}"
 PYTHON_BIN="${BIG_JUMP_PYTHON:-python3}"
