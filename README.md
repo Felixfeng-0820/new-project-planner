@@ -76,6 +76,14 @@ The destination directory must be named `big-jump`; the installer refuses any ot
 BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
 ```
 
+### skills.sh (any Agent Skills-compatible tool)
+
+```bash
+npx skills add felixfeng-0820/big-jump
+```
+
+Works with Claude Code, Cursor, Codex, and every other agent supported by [skills.sh](https://skills.sh/Felixfeng-0820/big-jump).
+
 ### Other Agent Skills-compatible tools
 
 Copy the whole repository skill set—`SKILL.md`, `references/`, `assets/`, `agents/`, `evals/`, and `scripts/`—into the tool's skill directory. Do not copy only `SKILL.md`, because the core intentionally loads profile guidance on demand.

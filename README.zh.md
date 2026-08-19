@@ -76,6 +76,14 @@ bash install.sh
 BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
 ```
 
+### skills.sh（任何兼容 Agent Skills 的工具）
+
+```bash
+npx skills add felixfeng-0820/big-jump
+```
+
+适用于 Claude Code、Cursor、Codex 以及 [skills.sh](https://skills.sh/Felixfeng-0820/big-jump) 支持的所有其他智能体。
+
 ### 其他兼容 Agent Skills 的工具
 
 请复制完整目录，包括 `SKILL.md`、`references/`、`assets/`、`agents/`、`evals/` 和 `scripts/`。不要只复制 `SKILL.md`，因为核心文件会按需加载项目类型说明。
