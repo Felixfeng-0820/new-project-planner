@@ -70,6 +70,12 @@ bash install.sh
 
 安装器会先在目标旁边搭好并校验完整技能，再替换旧版本；它会拒绝危险的软链接目录，并记录内容指纹。以后重新运行即可安全更新，不再只下载单独的 `SKILL.md`。
 
+目标目录名必须叫 `big-jump`：安装器会拒绝其他名称，避免误装到错误的文件夹。如果要装到别的位置，请把 `BIG_JUMP_SKILL_DIR` 指向一个以 `big-jump` 结尾的路径：
+
+```bash
+BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
+```
+
 ### 其他兼容 Agent Skills 的工具
 
 请复制完整目录，包括 `SKILL.md`、`references/`、`assets/`、`agents/`、`evals/` 和 `scripts/`。不要只复制 `SKILL.md`，因为核心文件会按需加载项目类型说明。

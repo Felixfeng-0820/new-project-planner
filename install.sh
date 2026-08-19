@@ -83,7 +83,7 @@ fi
 
 SKILL_DIR="$("${PYTHON_BIN}" -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' "${REQUESTED_SKILL_DIR}")"
 if [[ "$(basename -- "${SKILL_DIR}")" != "big-jump" ]]; then
-  fail "the destination directory must be named big-jump: ${SKILL_DIR}"
+  fail "the destination directory must be named big-jump: ${SKILL_DIR}. To install elsewhere, set BIG_JUMP_SKILL_DIR to a path ending in /big-jump, for example BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump"
 fi
 SKILL_PARENT="$(dirname -- "${SKILL_DIR}")"
 

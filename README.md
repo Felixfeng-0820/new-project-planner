@@ -70,6 +70,12 @@ bash install.sh
 
 The installer copies the complete skill—not only `SKILL.md`—to `${CODEX_HOME}/skills/big-jump/` when `CODEX_HOME` is set, otherwise to `~/.codex/skills/big-jump/`. It stages and validates the whole update before replacing the prior version, rejects unsafe symlink layouts, and records a content fingerprint. Re-run it to update.
 
+The destination directory must be named `big-jump`; the installer refuses any other name so it cannot silently land in the wrong folder. To install somewhere else, point `BIG_JUMP_SKILL_DIR` at a path that ends in `big-jump`:
+
+```bash
+BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
+```
+
 ### Other Agent Skills-compatible tools
 
 Copy the whole repository skill set—`SKILL.md`, `references/`, `assets/`, `agents/`, `evals/`, and `scripts/`—into the tool's skill directory. Do not copy only `SKILL.md`, because the core intentionally loads profile guidance on demand.
