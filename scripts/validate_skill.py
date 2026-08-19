@@ -151,7 +151,11 @@ def validate_runtime_files(root: Path) -> None:
         if not (root / path).is_file() or (root / path).stat().st_size == 0
     ]
     if missing:
-        fail(f"missing or empty runtime files: {', '.join(missing)}")
+        fail(
+            f"missing or empty runtime files: {', '.join(missing)}. "
+            "Install by copying the whole skill folder (SKILL.md plus references/, "
+            "assets/, agents/, evals/, and scripts/), not only SKILL.md."
+        )
 
     core = (root / "SKILL.md").read_text(encoding="utf-8")
     legacy_patterns = [
