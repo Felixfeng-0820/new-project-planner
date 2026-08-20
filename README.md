@@ -2,7 +2,7 @@
 
 > **From “I don't know what to build” to a verified first release.**
 
-[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://felixfeng-0820.github.io/big-jump/) · [中文版 README](README.zh.md)
+[![check-skill](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://lysanderphong.github.io/big-jump/) · [中文版 README](README.zh.md)
 
 Big Jump turns a coding agent into an autonomous builder-coach. Bring a rough idea—or only the skills you have, a recurring problem around you, and a goal such as a credible portfolio or a first software-income experiment. It helps choose a direction, scopes the smallest useful release, builds in testable slices, and verifies through the real entry point.
 
@@ -88,6 +88,20 @@ bash install.sh
 ```
 
 The installer copies the complete skill—not only `SKILL.md`—to `${CODEX_HOME}/skills/big-jump/` when `CODEX_HOME` is set, otherwise to `~/.codex/skills/big-jump/`. It stages and validates the whole update before replacing the prior version, rejects unsafe symlink layouts, and records a content fingerprint. Re-run it to update.
+
+The destination directory must be named `big-jump`; the installer refuses any other name so it cannot silently land in the wrong folder. To install somewhere else, point `BIG_JUMP_SKILL_DIR` at a path that ends in `big-jump`:
+
+```bash
+BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
+```
+
+### skills.sh (any Agent Skills-compatible tool)
+
+```bash
+npx skills add lysanderphong/big-jump
+```
+
+Works with Claude Code, Cursor, Codex, and every other agent supported by [skills.sh](https://skills.sh/LysanderPhong/big-jump).
 
 ### Other Agent Skills-compatible tools
 

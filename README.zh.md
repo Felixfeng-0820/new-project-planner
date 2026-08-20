@@ -2,7 +2,7 @@
 
 > **从“不知道做什么”，到第一个验证过的软件产品。**
 
-[![check-skill](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/Felixfeng-0820/big-jump/actions/workflows/check-skill.yml) · 🌐 [网站](https://felixfeng-0820.github.io/big-jump/index.zh.html) · [English README](README.md)
+[![check-skill](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml) · 🌐 [网站](https://lysanderphong.github.io/big-jump/index.zh.html) · [English README](README.md)
 
 Big Jump 把编程 Agent 变成一个自主执行的“建设者 + 教练”。你可以给它一个模糊想法，也可以只说自己会什么、身边有什么麻烦，以及想做作品集还是尝试第一笔软件收入。它会先帮你选方向，再收缩出最小可用版本、选择实际路线、按可测试的切片实现，并通过真实入口验证。
 
@@ -88,6 +88,20 @@ bash install.sh
 ```
 
 安装器会先在目标旁边搭好并校验完整技能，再替换旧版本；它会拒绝危险的软链接目录，并记录内容指纹。以后重新运行即可安全更新，不再只下载单独的 `SKILL.md`。
+
+目标目录名必须叫 `big-jump`：安装器会拒绝其他名称，避免误装到错误的文件夹。如果要装到别的位置，请把 `BIG_JUMP_SKILL_DIR` 指向一个以 `big-jump` 结尾的路径：
+
+```bash
+BIG_JUMP_SKILL_DIR=/my/own/skills/big-jump bash install.sh
+```
+
+### skills.sh（任何兼容 Agent Skills 的工具）
+
+```bash
+npx skills add lysanderphong/big-jump
+```
+
+适用于 Claude Code、Cursor、Codex 以及 [skills.sh](https://skills.sh/LysanderPhong/big-jump) 支持的所有其他智能体。
 
 ### 其他兼容 Agent Skills 的工具
 
