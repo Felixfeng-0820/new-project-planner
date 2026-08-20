@@ -1,4 +1,4 @@
 interface:
   display_name: "Big Jump"
-  short_description: "Build and verify substantial software projects"
-  default_prompt: "Use $big-jump to turn my idea into a scoped, verified project and teach me as you build."
+  short_description: "Choose, build, and verify a real software project"
+  default_prompt: "Use $big-jump to help me choose or build a realistic software project, validate the next decision, and teach me as we go."

@@ -1,11 +1,13 @@
 ---
 name: big-jump
-description: "Turn a vague software or product idea into a verified, explainable first release, or grow an existing project through scoped, testable slices. Use for substantial build requests involving web apps, APIs and backends, CLI or automation tools, data or AI systems, libraries, mobile or desktop apps, and mixed systems—especially when a beginner wants the agent to choose a practical path, implement autonomously, use Git safely, verify with stack-appropriate evidence, and teach briefly. Do not use for explanation-only requests, code review without implementation, or a tiny isolated fix that does not need a project workflow."
+description: "Turn a vague software idea—or motivation without a clear idea yet—into a verified, explainable first release, or grow an existing project through scoped, testable slices. Use for substantial builds across web apps, backends/APIs, CLI/automation, data/AI, libraries, mobile, desktop, and mixed systems; especially when a student or beginner has only coursework, feels stuck choosing a realistic first project from familiar routines or reachable users, wants a portfolio or to test a software-income hypothesis, and needs the agent to scope, implement, use Git safely, verify with stack-appropriate evidence, and teach briefly. Do not use for explanation-only work, general career or money advice without software-build intent, review without implementation, or a tiny isolated fix."
 ---
 
 # Big Jump
 
-Turn an idea into the smallest real product that proves its value. Build as much as the environment and the user's authority allow, verify every material claim, and teach one useful concept at a time. A release may be a website, an API, a CLI package, a reproducible model, a library, or an installable app; a public URL is not the definition of success.
+Turn motivation or an idea into the smallest real product that proves its value. Build as much as the environment and the user's authority allow, verify every material claim, and teach one useful concept at a time. A release may be a website, an API, a CLI package, a reproducible model, a library, or an installable app; a public URL is not the definition of success.
+
+When the goal includes freelancing or income, treat demand and willingness to pay as hypotheses to test, never as promises. Shipping a website proves that software can be delivered; it does not prove that anyone needs it or will pay for it.
 
 ## Start by routing the work
 
@@ -18,29 +20,35 @@ Choose an execution mode:
 
 Choose an engagement:
 
+- **Direction finding** — the user wants to build but has no concrete problem, first user, or evidence target. Read [ideation-and-coaching.md](references/ideation-and-coaching.md); do not choose a stack, write product code, or deploy yet. Finish with no more than three directions, one recommended default, and the cheapest next validation action, then reroute the chosen direction as a new build or spike.
 - **New build** — create a small product from an idea.
 - **Existing project** — extend a repository while following its instructions, architecture, and native checks.
 - **Spike** — answer a feasibility question with a time-bounded experiment. Label throwaway work and do not quietly promote it to production.
 
-Choose one or more project profiles from [project-profiles.md](references/project-profiles.md): web UI, backend/API, CLI/automation, data/AI, library/SDK, or mobile/desktop. Mixed systems accumulate the relevant boundary checks.
+After direction finding is complete, choose one or more project profiles from [project-profiles.md](references/project-profiles.md): web UI, backend/API, CLI/automation, data/AI, library/SDK, or mobile/desktop. Mixed systems accumulate the relevant boundary checks.
 
 Add a risk overlay whenever the work involves sensitive or production data, credentials, third-party writes, paid resources, publication, deployment, signing, or destructive operations.
 
 ## Establish the outcome contract
+
+For direction finding, state the user's primary goal, reachable contexts or users, relevant time/cost constraints, no more than three cross-profile candidates, one recommended default, and the cheapest manual or pre-build test with a go/no-go signal. Do not imply that a candidate has demand before this evidence exists.
 
 For a new build, state:
 
 1. one-line user outcome;
 2. the smallest useful v1 and explicit non-goals;
 3. selected profile(s) and delivery target;
-4. 3–7 phases, each with a one-line definition of done;
-5. the first reversible action to take now.
+4. the first reachable user or consumer and the next real-world signal needed;
+5. 3–7 phases, each with a one-line definition of done;
+6. the first reversible action to take now.
 
 For an existing project, first read repository instructions, manifests, tests, recent history, and current status. Then state the intended behavior change, files or boundaries likely affected, relevant native checks, and the smallest safe slice.
 
 For a spike, state the decision it will inform, a falsifiable hypothesis, a time/data/compute/cost budget, representative inputs, and the threshold that would support or reject the path. Stop when the threshold is reached, the hypothesis is disproved, or the budget is exhausted. Record whether the experiment should be discarded, retained as evidence, or deliberately rebuilt for production.
 
 Do not conduct a long interview. Make and disclose reversible assumptions. Ask one material question at a time only when the answer changes architecture, privacy, production data, cost, publication, or another difficult-to-reverse decision. Recommend a default with the question.
+
+When a student or first-time builder is stuck, has only coursework, or mentions portfolios, freelancing, or earning money without a concrete problem, use direction finding before choosing a stack.
 
 For multi-phase work, maintain the project's existing task record. If none exists and a durable record is useful, create `PROJECT_NOTES.md` from [the template](assets/PROJECT_NOTES.template.md). Keep it factual: outcome, non-goals, phases, decisions, verification evidence, limitations, and pending external actions.
 
@@ -99,6 +107,8 @@ Map every claim to fresh evidence:
 
 Report status as **verified**, **partially verified**, or **not verified**. A fallback may support a narrower claim but never inherits the stronger test's label.
 
+Technical correctness, observed usefulness, market demand, and revenue are different claims. Never infer one from another or promise income, customers, internships, or résumé outcomes. School labels, peer success stories, a deployed URL, traffic, praise, surveys, or agent-generated ideas may suggest a hypothesis; none proves demand or payment.
+
 For a bug fix or deterministic new behavior, prefer a red-green check when practical: demonstrate the failure, apply the fix, and demonstrate the pass. Do not force test-first ceremony onto throwaway spikes, generated boilerplate, or configuration-only work; still validate the resulting behavior.
 
 ## Handle data, secrets, and failures honestly
@@ -131,7 +141,7 @@ On resume, read the project record and current Git state, then say in one line w
 
 Follow the host application's communication requirements. Keep updates milestone-based and brief; do not repeat the whole plan. Match the user's language and level. Explain one new concept per phase in at most four short lines unless the user asks for depth.
 
-If the user has no direction, read [ideation-and-coaching.md](references/ideation-and-coaching.md). If they ask for a retrospective or deeper teaching, use the same reference rather than expanding the core build workflow.
+If the user has no direction, or says they see others shipping or earning but do not know where to start, read [ideation-and-coaching.md](references/ideation-and-coaching.md). If they ask for a retrospective or deeper teaching, use the same reference rather than expanding the core build workflow.
 
 ## Stop only at real boundaries
 
@@ -153,6 +163,7 @@ Before declaring completion, review every applicable item and mark non-applicabl
 - main, empty, invalid, and failure paths have relevant evidence;
 - persistence, migrations, retries, idempotency, or recovery are verified where promised;
 - security, privacy, accessibility, performance, portability, and cost claims match actual checks;
+- for an earning experiment, proof of use, repeated use, and willingness to pay are kept separate, with no revenue claim inferred from a completed build alone;
 - the native full suite/build/package passes, or pre-existing and new failures are clearly separated;
 - the final diff contains no unrelated or user-owned changes;
 - run, test, update, and rollback or recovery instructions are accurate;

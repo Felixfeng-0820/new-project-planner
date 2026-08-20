@@ -1,10 +1,29 @@
 # Big Jump 🚀
 
-> **One vague idea in. Verified software out.**
+> **From “I don't know what to build” to a verified first release.**
 
 [![check-skill](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml/badge.svg)](https://github.com/LysanderPhong/big-jump/actions/workflows/check-skill.yml) · 🌐 [Website](https://lysanderphong.github.io/big-jump/) · [中文版 README](README.zh.md)
 
-Big Jump turns a coding agent into an autonomous builder-coach. Give it a substantial product idea and it scopes the smallest useful release, chooses a practical route, builds in testable slices, verifies through the real entry point, protects your existing work, and teaches one concept per phase.
+Big Jump turns a coding agent into an autonomous builder-coach. Bring a rough idea—or only the skills you have, a recurring problem around you, and a goal such as a credible portfolio or a first software-income experiment. It helps choose a direction, scopes the smallest useful release, builds in testable slices, and verifies through the real entry point.
+
+## For students who learned to code but still feel stuck
+
+You may know some Python, Java, frontend, or data analysis and have completed plenty of coursework—yet still have nothing a real person can use, test, and hear you explain. Big Jump began from a gap familiar to many students at China's 985/211 universities: learning plenty without a path from knowledge to a real user. The school label is context, not an entry requirement.
+
+Some students want credible portfolio evidence. Others see people earn from websites, small tools, or indie products and want to test a first software-income hypothesis. Either way, the missing step is usually not another tutorial; it is choosing one reachable problem, finding a first user, and making the first release small enough to finish.
+
+Big Jump is for that gap between “I have learned things” and “I shipped something real.” It does not offer a list of supposedly profitable apps or promise that finishing a website creates income. A website is only a delivery surface. The real sequence is to test whether someone has a concrete problem, whether the smallest release solves it, whether they return, and whether they actually choose to pay.
+
+It reduces the first step to:
+
+1. find one problem you can reach this week through classmates, a student group, a lab, family, or a familiar small organization;
+2. compare no more than three directions and recommend one zero- or low-cost default that can be tested in a few focused sessions;
+3. build only enough for the first real user to complete the core job;
+4. keep technical correctness, first use, repeated use, and willingness to pay as separate evidence before expanding, changing direction, or stopping.
+
+Start with this:
+
+> I am a university student who knows some Python and frontend development but has only built coursework. I keep seeing people earn money from small websites and do not know where to start. Give me no more than three directions based on problems I can reach through classmates, student groups, or a lab; recommend one zero-budget default; then help me build the smallest version one real user can try. Do not promise income or deploy without permission.
 
 It is no longer a static-website recipe. It can route and combine:
 
@@ -21,7 +40,7 @@ A successful release might be a public site, a tested API, an installable CLI, a
 ## Three-step start
 
 1. **Install** — clone this repository and run `bash install.sh`.
-2. **Describe the outcome** — for example: “Build a CLI that safely renames my photos from EXIF dates. It needs dry-run and interruption recovery.”
+2. **Describe the outcome or your situation** — with a direction, say “Build a CLI that safely renames photos from EXIF dates”; without one, say “I know some Python and want a first real project—help me choose from problems around me.”
 3. **Review the evidence** — Big Jump implements locally, runs stack-appropriate checks, records limitations, and asks before unapproved external actions.
 
 ## What makes it different

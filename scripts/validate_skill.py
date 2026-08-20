@@ -183,8 +183,9 @@ def validate_evals(root: Path) -> None:
 
     ids: set[str] = set()
     trigger_values: set[bool] = set()
+    covered_engagements: set[str] = set()
     covered_profiles: set[str] = set()
-    valid_engagements = {"new build", "existing project", "spike"}
+    valid_engagements = {"direction finding", "new build", "existing project", "spike"}
     valid_profiles = {
         "web UI",
         "backend/API",
@@ -222,12 +223,18 @@ def validate_evals(root: Path) -> None:
             route = case.get("expected_route")
             if not isinstance(route, dict):
                 fail(f"trigger eval {case_id} needs an expected_route")
-            if route.get("engagement") not in valid_engagements:
+            engagement = route.get("engagement")
+            if engagement not in valid_engagements:
                 fail(f"eval {case_id} has an invalid engagement")
+            covered_engagements.add(engagement)
             profiles = route.get("profiles")
-            if not isinstance(profiles, list) or not profiles or not all(
+            if not isinstance(profiles, list) or not all(
                 isinstance(profile, str) and profile for profile in profiles
             ):
+                fail(f"eval {case_id} profiles must be a string list")
+            if engagement == "direction finding" and profiles:
+                fail(f"eval {case_id} must defer profiles during direction finding")
+            if engagement != "direction finding" and not profiles:
                 fail(f"eval {case_id} needs one or more expected profiles")
             unknown_profiles = sorted(set(profiles) - valid_profiles)
             if unknown_profiles:
@@ -257,6 +264,9 @@ def validate_evals(root: Path) -> None:
             fail(f"non-trigger eval {case_id} needs an exclusion_reason")
     if trigger_values != {False, True}:
         fail("evals must include trigger and near-miss non-trigger cases")
+    missing_engagements = sorted(valid_engagements - covered_engagements)
+    if missing_engagements:
+        fail(f"evals do not cover engagements: {', '.join(missing_engagements)}")
     missing_profiles = sorted(valid_profiles - covered_profiles)
     if missing_profiles:
         fail(f"evals do not cover profiles: {', '.join(missing_profiles)}")
